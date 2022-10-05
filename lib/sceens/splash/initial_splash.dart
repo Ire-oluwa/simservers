@@ -1,16 +1,21 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:simservers/constants/app_constants.dart';
 
-class Splash extends StatefulWidget {
-  const Splash({Key? key}) : super(key: key);
+class InitialSplashScreen extends StatefulWidget {
+  const InitialSplashScreen({Key? key}) : super(key: key);
   static const String id = "splash screen";
 
   @override
-  State<Splash> createState() => _SplashState();
+  State<InitialSplashScreen> createState() => _InitialSplashScreenState();
 }
 
-class _SplashState extends State<Splash> {
+class _InitialSplashScreenState extends State<InitialSplashScreen> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +33,10 @@ class _SplashState extends State<Splash> {
               "assets/splash/SIMSAVERS LOGO.png",
               fit: BoxFit.cover,
             ),
-            Image.asset("assets/splash/bottom_image_splah.png")
+            Image.asset(
+              "assets/splash/bottom_image_splash.png",
+              fit: BoxFit.cover,
+            ),
           ],
         ),
       ),
