@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:simservers/sceens/splash.dart';
+import 'package:simservers/sceens/splash/final_splash.dart';
+import 'package:simservers/sceens/splash/initial_splash.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,9 +26,10 @@ class SimServers extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeData(),
-          initialRoute: Splash.id,
+          initialRoute: InitialSplashScreen.id,
           routes: {
-            Splash.id: (context) => const Splash(),
+            InitialSplashScreen.id: (context) => const InitialSplashScreen(),
+            FinalSplashScreen.id: (context) => const FinalSplashScreen(),
           },
         );
       },
