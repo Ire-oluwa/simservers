@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:simservers/sceens/splash/final_splash.dart';
-import 'package:simservers/sceens/splash/initial_splash.dart';
+import 'package:provider/provider.dart';
+import 'package:simservers/providers/device_info_provider.dart';
+import 'package:simservers/screens/landing/landing_page.dart';
+import 'package:simservers/screens/splash/final_splash.dart';
+import 'package:simservers/screens/splash/initial_splash.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const SimServers());
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(create: (_) => DeviceInfo()),
+    ],
+    child: const SimServers(),
+  ));
 }
 
 class SimServers extends StatelessWidget {
@@ -30,6 +38,7 @@ class SimServers extends StatelessWidget {
           routes: {
             InitialSplashScreen.id: (context) => const InitialSplashScreen(),
             FinalSplashScreen.id: (context) => const FinalSplashScreen(),
+            LandingPage.id: (context) => const LandingPage(),
           },
         );
       },
