@@ -3,7 +3,11 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:simservers/providers/device_info_provider.dart';
+import 'package:simservers/screens/change_password/change_password.dart';
+import 'package:simservers/screens/forgot_password/forgot_password.dart';
 import 'package:simservers/screens/landing/landing_page.dart';
+import 'package:simservers/screens/sign_in/sign_in.dart';
+import 'package:simservers/screens/sign_up_screen/sign_up.dart';
 import 'package:simservers/screens/splash/final_splash.dart';
 import 'package:simservers/screens/splash/initial_splash.dart';
 
@@ -39,6 +43,10 @@ class SimServers extends StatelessWidget {
             InitialSplashScreen.id: (context) => const InitialSplashScreen(),
             FinalSplashScreen.id: (context) => const FinalSplashScreen(),
             LandingPage.id: (context) => const LandingPage(),
+            SignUpScreen.id: (context) => const SignUpScreen(),
+            SignInScreen.id: (context) => const SignInScreen(),
+            ForgotPasswordScreen.id: (context) => const ForgotPasswordScreen(),
+            ChangePasswordScreen.id: (context) => const ChangePasswordScreen(),
           },
         );
       },

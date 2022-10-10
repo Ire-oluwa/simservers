@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:simservers/constants/app_constants.dart';
-import 'package:simservers/utilities/button_style.dart';
+import 'package:simservers/screens/sign_in/sign_in.dart';
+import 'package:simservers/screens/sign_up_screen/sign_up.dart';
+import 'package:simservers/utilities/elevated_button_style.dart';
 import 'package:simservers/widgets/custom_text.dart';
 
 class LandingPage extends StatelessWidget {
@@ -57,26 +59,30 @@ class LandingPage extends StatelessWidget {
           SizedBox(height: 48.0.h),
           Padding(
             padding: EdgeInsets.only(
-              // left: 74.5.w,
-              // right: 61.0.w,
+              left: 74.5.w,
+              right: 61.0.w,
               top: 700.0.h,
-              // bottom: 151.0.h,
             ),
-            child: Wrap(
+            child: Row(
+              // mainAxisAlignment: MainAxisAlignment.center,
               // alignment: WrapAlignment.center,
-              crossAxisAlignment: WrapCrossAlignment.center,
+              // crossAxisAlignment: WrapCrossAlignment.center,
               children: [
                 CustomElevatedButton(
-                  onClick: () {},
+                  onClick: () {
+                    Navigator.of(context).pushNamed(SignUpScreen.id);
+                  },
                   backgroundColour: kButtonColour,
                   child: const CustomText(
-                    text: "Sign up",
+                    text: "Sign Up",
                     colour: kWhite,
                   ),
                 ),
                 SizedBox(width: 24.5.w),
                 CustomElevatedButton(
-                  onClick: () {},
+                  onClick: () {
+                    Navigator.pushNamed(context, SignInScreen.id);
+                  },
                   backgroundColour: kButtonColour,
                   child: const CustomText(
                     text: "Login",
