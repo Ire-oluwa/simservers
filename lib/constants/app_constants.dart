@@ -5,6 +5,7 @@ const kSecondaryBlue = Color(0xFF4B6DDB);
 const kTertiaryBlue = Color(0xFF4779DD);
 const kPrimaryGreen = Color(0xFF00C9B7);
 const kWhite = Color(0xffFFFFFF);
+const kContainerWhite = Color(0xFFF4F7FB);
 const kButtonColour = Color(0xFF7168F6);
 const kSubmissionButtonColour = Color(0xFF467BFB);
 const kLightBorderSide = BorderSide(width: 1.0, color: Colors.black12);

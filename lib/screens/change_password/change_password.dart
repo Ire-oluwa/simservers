@@ -14,6 +14,7 @@ class ChangePasswordScreen extends StatefulWidget {
 }
 
 class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
+  final changePasswordKey = GlobalKey<FormState>();
   final _otpController = TextEditingController();
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
@@ -68,6 +69,17 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                 title: "Save",
                 onClick: () {},
                 textColour: kWhite,
+              ),
+            ),
+            SizedBox(height: 15.0.h),
+            SizedBox(
+              width: 212.15.w,
+              height: 47.0.h,
+              child: SubmissionButton(
+                fillColour: kWhite,
+                title: "Cancel",
+                textColour: kSubmissionButtonColour,
+                onClick: () {},
               ),
             ),
           ],

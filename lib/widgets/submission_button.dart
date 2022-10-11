@@ -19,8 +19,9 @@ class SubmissionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return RawMaterialButton(
       fillColor: fillColour,
-      shape:
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0.r)),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15.0.r),
+      ),
       onPressed: onClick,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,

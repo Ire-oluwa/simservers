@@ -41,7 +41,7 @@ class _InitialSplashScreenState extends State<InitialSplashScreen> {
     // });
 
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      timeStamp = const Duration(seconds: 3);
+      timeStamp = const Duration(seconds: 2);
       Future.delayed(timeStamp, () {
         Navigator.of(context).pushReplacementNamed(FinalSplashScreen.id);
       });
