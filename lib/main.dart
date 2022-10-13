@@ -6,6 +6,7 @@ import 'package:simservers/providers/device_info_provider.dart';
 import 'package:simservers/screens/change_password/change_password.dart';
 import 'package:simservers/screens/forgot_password/forgot_password.dart';
 import 'package:simservers/screens/landing/landing_page.dart';
+import 'package:simservers/screens/register_sim_service/register_sim_service.dart';
 import 'package:simservers/screens/sign_in/sign_in.dart';
 import 'package:simservers/screens/sign_up_screen/sign_up.dart';
 import 'package:simservers/screens/splash/final_splash.dart';
@@ -47,6 +48,7 @@ class SimServers extends StatelessWidget {
             SignInScreen.id: (context) => const SignInScreen(),
             ForgotPasswordScreen.id: (context) => const ForgotPasswordScreen(),
             ChangePasswordScreen.id: (context) => const ChangePasswordScreen(),
+            RegisterSimService.id: (context) => const RegisterSimService(),
           },
         );
       },

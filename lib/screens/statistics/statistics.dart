@@ -10,6 +10,11 @@ class StatisticsScreen extends StatefulWidget {
 class _StatisticsScreenState extends State<StatisticsScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+        // appBar: AppBar(
+        //     // elevation: 0.0,
+        //     // backgroundColor: kPrimaryBlue,
+        //     ),
+        );
   }
 }

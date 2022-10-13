@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:simservers/constants/app_constants.dart';
-import 'package:simservers/screens/home_screen/home_screen.dart';
+import 'package:simservers/screens/dashboard/dashboard.dart';
 import 'package:simservers/screens/sign_in/sign_in.dart';
 import 'package:simservers/utilities/custom_text_field/custom_text_form_field.dart';
 import 'package:simservers/widgets/submission_button.dart';
@@ -164,7 +164,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   onClick: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => const HomeScreen(),
+                        builder: (context) => const DashboardScreen(),
                       ),
                     );
                   },

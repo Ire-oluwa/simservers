@@ -22,6 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               children: [
                 Container(
+                  // padding: EdgeInsets.only(top: 60.0.h),
                   height: 270.0.h,
                   width: 428.0.w,
                   decoration: BoxDecoration(
@@ -80,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: const [
-                            CustomText(text: "₦ 346,300", colour: kWhite),
+                            CustomText(text: "₦346,300", colour: kWhite),
                             CustomText(text: "500GB", colour: kWhite),
                             CustomText(text: "100GB", colour: kWhite),
                           ],
@@ -135,8 +136,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 438.0.h,
                   width: 428.0.w,
                   decoration: BoxDecoration(
-                    // color: kContainerWhite,
-                    color: Colors.green,
+                    color: kContainerWhite,
+                    // color: Colors.green,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(60.0.r),
                       topRight: Radius.circular(60.0.r),
@@ -152,7 +153,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       width: 386.0.w,
                       height: 317.0.h,
                       decoration: BoxDecoration(
-                        color: Colors.blue,
+                        // color: Colors.blue,
+                        color: kWhite,
                         borderRadius: BorderRadius.circular(8.0.r),
                       ),
                     ),
