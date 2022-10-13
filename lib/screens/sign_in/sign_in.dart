@@ -87,6 +87,8 @@ class _SignInScreenState extends State<SignInScreen> {
                           keyboardType: TextInputType.emailAddress,
                           inputAction: TextInputAction.next,
                           placeholder: "Email",
+                          width: 329.0.w,
+                          height: 46.0.h,
                         ),
                         SizedBox(height: 10.0.h),
                         CustomTextFormField(
@@ -94,6 +96,8 @@ class _SignInScreenState extends State<SignInScreen> {
                           keyboardType: TextInputType.visiblePassword,
                           inputAction: TextInputAction.next,
                           placeholder: "Password",
+                          width: 329.0.w,
+                          height: 46.0.h,
                         ),
                       ],
                     ),

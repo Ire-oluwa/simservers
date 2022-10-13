@@ -14,6 +14,8 @@ class CustomTextFormField extends StatelessWidget {
     this.textCapitalization = TextCapitalization.sentences,
     this.suffixIcon,
     this.onKeyUp,
+    required this.width,
+    required this.height,
   }) : super(key: key);
 
   final TextEditingController controller;
@@ -26,12 +28,14 @@ class CustomTextFormField extends StatelessWidget {
   final TextCapitalization textCapitalization;
   final Widget? suffixIcon;
   final Function(String)? onKeyUp;
+  final double width;
+  final double height;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 329.0.w,
-      height: 46.0.h,
+      width: width,
+      height: height,
       child: TextFormField(
         onChanged: onKeyUp,
         controller: controller,

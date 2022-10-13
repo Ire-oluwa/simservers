@@ -81,6 +81,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   keyboardType: TextInputType.emailAddress,
                   inputAction: TextInputAction.next,
                   placeholder: "Email",
+                  width: 329.0.w,
+                  height: 46.0.h,
                 ),
                 SizedBox(height: 39.0.h),
                 SizedBox(

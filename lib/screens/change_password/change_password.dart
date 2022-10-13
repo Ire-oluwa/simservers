@@ -45,6 +45,8 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
               keyboardType: TextInputType.number,
               inputAction: TextInputAction.next,
               placeholder: "Enter OTP",
+              width: 329.0.w,
+              height: 46.0.h,
             ),
             SizedBox(height: 16.0.h),
             CustomTextFormField(
@@ -52,6 +54,8 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
               keyboardType: TextInputType.visiblePassword,
               inputAction: TextInputAction.next,
               placeholder: "New Password",
+              width: 329.0.w,
+              height: 46.0.h,
             ),
             SizedBox(height: 16.0.h),
             CustomTextFormField(
@@ -59,6 +63,8 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
               keyboardType: TextInputType.visiblePassword,
               inputAction: TextInputAction.next,
               placeholder: "Confirm Password",
+              width: 329.0.w,
+              height: 46.0.h,
             ),
             SizedBox(height: 27.0.h),
             SizedBox(

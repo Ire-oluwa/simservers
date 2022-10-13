@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:simservers/constants/app_constants.dart';
-import 'package:simservers/screens/register_sim_service/add_new_devices.dart';
-import 'package:simservers/screens/register_sim_service/reset.dart';
 import 'package:simservers/widgets/custom_text.dart';
-
-import 'delete.dart';
+import 'package:simservers/widgets/custom_text_button/custom_text_button.dart';
 
 class RegisterSimService extends StatefulWidget {
   const RegisterSimService({Key? key}) : super(key: key);
@@ -39,13 +36,16 @@ class _RegisterSimServiceState extends State<RegisterSimService> {
           bottom: _buildTabBar(context),
           centerTitle: true,
         ),
-        body: const Center(
-          child: TabBarView(
-            children: [
-              AddNewDevices(),
-              Reset(),
-              Delete(),
-            ],
+        body: GestureDetector(
+          onTap: kUnfocus,
+          child: const Center(
+            child: TabBarView(
+              children: [
+                Center(child: Text("data")),
+                Center(child: Text("data")),
+                Center(child: Text("data")),
+              ],
+            ),
           ),
         ),
       ),
@@ -58,55 +58,45 @@ PreferredSizeWidget _buildTabBar(BuildContext context) {
     indicatorColor: Colors.transparent,
     tabs: [
       CustomTextButton(
-        title: "Add new device",
+        height: 40.0.h,
+        width: 160.0.w,
+        title: "Add device",
         //TODO: pop-up to add device.
-        onClick: () {},
+        onClick: () {
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0.r),
+                ),
+                content: Text("Hello", style: TextStyle(color: kBlack)),
+              );
+            },
+          );
+        },
         backgroundColour: const Color(0xFF20B45B),
       ),
       CustomTextButton(
+        height: 40.0.h,
+        width: 160.0.w,
         title: "Reset",
         //TODO: pop-up to reset settings.
-        onClick: () {},
+        onClick: () {
+          AlertDialog();
+        },
         backgroundColour: const Color(0xFF5A9FFC),
       ),
       CustomTextButton(
+        height: 40.0.h,
+        width: 160.0.w,
         title: "Delete",
         //TODO: pop-up to delete device.
-        onClick: () {},
+        onClick: () {
+          AlertDialog();
+        },
         backgroundColour: const Color(0xFFFE7062),
       ),
     ],
   );
-}
-
-class CustomTextButton extends StatelessWidget {
-  const CustomTextButton({
-    Key? key,
-    required this.title,
-    required this.onClick,
-    required this.backgroundColour,
-  }) : super(key: key);
-  final String title;
-  final void Function() onClick;
-  final Color backgroundColour;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 29.0.h,
-      width: 113.0.w,
-      child: TextButton(
-        onPressed: onClick,
-        style: TextButton.styleFrom(
-          backgroundColor: backgroundColour,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0.r),
-          ),
-        ),
-        child: Center(
-          child: Text(title, style: const TextStyle(color: kWhite)),
-        ),
-      ),
-    );
-  }
 }

@@ -80,6 +80,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           keyboardType: TextInputType.name,
                           inputAction: TextInputAction.next,
                           placeholder: "Full name",
+                          width: 329.0.w,
+                          height: 46.0.h,
                         ),
                         SizedBox(height: 10.0.h),
                         CustomTextFormField(
@@ -87,6 +89,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           keyboardType: TextInputType.name,
                           inputAction: TextInputAction.next,
                           placeholder: "Email",
+                          width: 329.0.w,
+                          height: 46.0.h,
                         ),
                         SizedBox(height: 10.0.h),
                         CustomTextFormField(
@@ -94,6 +98,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           keyboardType: TextInputType.name,
                           inputAction: TextInputAction.next,
                           placeholder: "Phone Number",
+                          width: 329.0.w,
+                          height: 46.0.h,
                         ),
                         SizedBox(height: 10.0.h),
                         CustomTextFormField(
@@ -101,6 +107,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           keyboardType: TextInputType.name,
                           inputAction: TextInputAction.next,
                           placeholder: "Password",
+                          width: 329.0.w,
+                          height: 46.0.h,
                         ),
                         SizedBox(height: 10.0.h),
                         CustomTextFormField(
@@ -108,6 +116,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           keyboardType: TextInputType.name,
                           inputAction: TextInputAction.next,
                           placeholder: "Confirm Password",
+                          width: 329.0.w,
+                          height: 46.0.h,
                         ),
                       ],
                     ),
