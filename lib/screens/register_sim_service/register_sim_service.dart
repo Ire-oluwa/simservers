@@ -70,6 +70,7 @@ PreferredSizeWidget _buildTabBar(BuildContext context, deviceNameController,
     indicatorColor: Colors.transparent,
     tabs: [
       CustomTextButton(
+        textColour: kWhite,
         backgroundColour: const Color(0xFF20B45B),
         height: 40.0.h,
         width: 160.0.w,
@@ -105,6 +106,7 @@ PreferredSizeWidget _buildTabBar(BuildContext context, deviceNameController,
         height: 40.0.h,
         width: 160.0.w,
         title: "Reset",
+        textColour: kWhite,
         //TODO: pop-up to reset settings.
         onClick: () {
           AlertDialog();
@@ -112,6 +114,7 @@ PreferredSizeWidget _buildTabBar(BuildContext context, deviceNameController,
         backgroundColour: const Color(0xFF5A9FFC),
       ),
       CustomTextButton(
+        textColour: kWhite,
         height: 40.0.h,
         width: 160.0.w,
         title: "Delete",

@@ -119,16 +119,19 @@ class _AddNewDevicesState extends State<AddNewDevices> {
                           children: [
                             CustomTextButton(
                               title: "Close",
+                              textColour: kBlack,
                               onClick: () {
                                 Navigator.of(context).pop();
                               },
                               backgroundColour: kWhite,
+                              borderColour: kSecondaryBlue,
                               height: 26.26.h,
                               width: 102.32.w,
                             ),
                             SizedBox(width: 12.68.w),
                             CustomTextButton(
                               title: "Save",
+                              textColour: kWhite,
                               onClick: () {
                                 // Navigator.of(context).pop();
                               },
