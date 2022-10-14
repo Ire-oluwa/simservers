@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:simservers/constants/app_constants.dart';
 import 'package:simservers/utilities/custom_text_field/custom_text_form_field.dart';
 import 'package:simservers/widgets/custom_container/custom_container.dart';
 import 'package:simservers/widgets/custom_text.dart';
+import 'package:simservers/widgets/custom_text_button/custom_text_button.dart';
 
 class AddNewDevices extends StatefulWidget {
   const AddNewDevices({Key? key}) : super(key: key);
@@ -110,6 +112,31 @@ class _AddNewDevicesState extends State<AddNewDevices> {
                           inputAction: TextInputAction.next,
                           width: 311.5.w,
                           height: 38.27.h,
+                        ),
+                        SizedBox(height: 19.02.h),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            CustomTextButton(
+                              title: "Close",
+                              onClick: () {
+                                Navigator.of(context).pop();
+                              },
+                              backgroundColour: kWhite,
+                              height: 26.26.h,
+                              width: 102.32.w,
+                            ),
+                            SizedBox(width: 12.68.w),
+                            CustomTextButton(
+                              title: "Save",
+                              onClick: () {
+                                // Navigator.of(context).pop();
+                              },
+                              backgroundColour: kWhite,
+                              height: 26.26.h,
+                              width: 102.32.w,
+                            ),
+                          ],
                         ),
                       ],
                     ),
