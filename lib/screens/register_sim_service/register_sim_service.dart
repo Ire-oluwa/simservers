@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:simservers/constants/app_constants.dart';
+import 'package:simservers/screens/register_sim_service/add_new_devices.dart';
 import 'package:simservers/widgets/custom_text.dart';
 import 'package:simservers/widgets/custom_text_button/custom_text_button.dart';
 
@@ -13,6 +14,11 @@ class RegisterSimService extends StatefulWidget {
 }
 
 class _RegisterSimServiceState extends State<RegisterSimService> {
+  final _deviceNameController = TextEditingController();
+  final _deviceKeyController = TextEditingController();
+  final _simBalanceController = TextEditingController();
+  final _devicePinController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -33,7 +39,12 @@ class _RegisterSimServiceState extends State<RegisterSimService> {
             colour: kBlack,
             fontWeight: FontWeight.w500,
           ),
-          bottom: _buildTabBar(context),
+          bottom: _buildTabBar(
+              context,
+              _deviceNameController,
+              _deviceKeyController,
+              _simBalanceController,
+              _devicePinController),
           centerTitle: true,
         ),
         body: GestureDetector(
@@ -53,11 +64,13 @@ class _RegisterSimServiceState extends State<RegisterSimService> {
   }
 }
 
-PreferredSizeWidget _buildTabBar(BuildContext context) {
+PreferredSizeWidget _buildTabBar(BuildContext context, deviceNameController,
+    deviceKeyController, simBalanceController, devicePinController) {
   return TabBar(
     indicatorColor: Colors.transparent,
     tabs: [
       CustomTextButton(
+        backgroundColour: const Color(0xFF20B45B),
         height: 40.0.h,
         width: 160.0.w,
         title: "Add device",
@@ -67,15 +80,26 @@ PreferredSizeWidget _buildTabBar(BuildContext context) {
             context: context,
             builder: (BuildContext context) {
               return AlertDialog(
+                contentPadding: const EdgeInsets.all(10.0),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0.r),
                 ),
-                content: Text("Hello", style: TextStyle(color: kBlack)),
+                content: SingleChildScrollView(
+                  child: SizedBox(
+                    height: 575.0.w,
+                    width: 354.96.w,
+                    child: AddNewDeviceColumn(
+                      deviceNameController: deviceNameController,
+                      deviceKeyController: deviceKeyController,
+                      simBalanceController: simBalanceController,
+                      devicePinController: devicePinController,
+                    ),
+                  ),
+                ),
               );
             },
           );
         },
-        backgroundColour: const Color(0xFF20B45B),
       ),
       CustomTextButton(
         height: 40.0.h,

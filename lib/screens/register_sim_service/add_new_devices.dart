@@ -150,3 +150,97 @@ class _AddNewDevicesState extends State<AddNewDevices> {
     );
   }
 }
+
+class AddNewDeviceColumn extends StatelessWidget {
+  const AddNewDeviceColumn({
+    Key? key,
+    required TextEditingController deviceNameController,
+    required TextEditingController deviceKeyController,
+    required TextEditingController simBalanceController,
+    required TextEditingController devicePinController,
+  })  : deviceNameController = deviceNameController,
+        deviceKeyController = deviceKeyController,
+        simBalanceController = simBalanceController,
+        devicePinController = devicePinController,
+        super(key: key);
+
+  final TextEditingController deviceNameController;
+  final TextEditingController deviceKeyController;
+  final TextEditingController simBalanceController;
+  final TextEditingController devicePinController;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        CustomText(text: "DeviceName", fontSize: 10.87.sp),
+        SizedBox(height: 2.8.h),
+        CustomTextFormField(
+          controller: deviceNameController,
+          keyboardType: TextInputType.text,
+          inputAction: TextInputAction.next,
+          width: 311.5.w,
+          height: 38.27.h,
+        ),
+        SizedBox(height: 11.77.h),
+        CustomText(text: "Device Key", fontSize: 10.87.sp),
+        SizedBox(height: 2.8.h),
+        CustomTextFormField(
+          controller: deviceKeyController,
+          keyboardType: TextInputType.text,
+          inputAction: TextInputAction.next,
+          width: 311.5.w,
+          height: 38.27.h,
+        ),
+        SizedBox(height: 11.77.h),
+        CustomText(text: "Sim Slot", fontSize: 10.87.sp),
+        CustomContainer(
+          height: 38.27.h,
+          width: 311.5.w,
+          containerChild: Align(
+            alignment: Alignment.centerLeft,
+            child: CustomText(text: "Sim 1", fontSize: 10.87.sp),
+          ),
+        ),
+        SizedBox(height: 11.77.h),
+        CustomText(text: "Sim Balance", fontSize: 10.87.sp),
+        SizedBox(height: 2.8.h),
+        CustomTextFormField(
+          controller: simBalanceController,
+          keyboardType: const TextInputType.numberWithOptions(decimal: true),
+          inputAction: TextInputAction.next,
+          width: 311.5.w,
+          height: 38.27.h,
+        ),
+        SizedBox(height: 11.77.h),
+        CustomText(text: "Device Status", fontSize: 10.87.sp),
+        CustomContainer(
+          height: 38.27.h,
+          width: 311.5.w,
+          containerChild: const CustomText(
+            text: "Not Active",
+          ),
+        ),
+        SizedBox(height: 11.77.h),
+        CustomText(text: "Device Processes", fontSize: 10.87.sp),
+        SizedBox(height: 2.8.h),
+        CustomContainer(
+          height: 38.27.h,
+          width: 311.5.w,
+          containerChild: const CustomText(text: "Sms"),
+        ),
+        SizedBox(height: 11.77.h),
+        CustomText(text: "Device Pin", fontSize: 10.87.sp),
+        SizedBox(height: 2.8.h),
+        CustomTextFormField(
+          controller: devicePinController,
+          keyboardType: TextInputType.number,
+          inputAction: TextInputAction.next,
+          width: 311.5.w,
+          height: 38.27.h,
+        ),
+      ],
+    );
+  }
+}
