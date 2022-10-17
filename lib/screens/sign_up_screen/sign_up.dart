@@ -130,7 +130,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 child: Row(
                   children: [
                     SizedBox(
-                      width: 16.0.w,
+                      width: 18.0.w,
                       height: 16.0.h,
                       child: Checkbox(
                         shape: RoundedRectangleBorder(
@@ -144,7 +144,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         },
                       ),
                     ),
-                    SizedBox(width: 24.0.w),
+                    SizedBox(width: 12.0.w),
                     Text("I agree to the ",
                         style: GoogleFonts.poppins(
                           fontSize: 14.0.sp,

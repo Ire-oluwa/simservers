@@ -15,12 +15,14 @@ class CustomContainer extends StatelessWidget {
     this.blurRadius,
     this.padding,
     required this.containerChild,
+    this.colour,
   }) : super(key: key);
   final double height;
   final double width;
   final Gradient? gradient;
   final BorderRadiusGeometry? borderRadius;
   final Color? boxShadowColour;
+  final Color? colour;
   final double? boxShadowSpreadRadius;
   final Offset? boxShadowOffset;
   final BlurStyle? blurStyle;
@@ -35,6 +37,7 @@ class CustomContainer extends StatelessWidget {
       height: height,
       width: width,
       decoration: BoxDecoration(
+        color: colour,
         gradient: gradient,
         borderRadius: borderRadius,
         boxShadow: [

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:simservers/constants/app_constants.dart';
 import 'package:simservers/utilities/custom_text_field/custom_text_form_field.dart';
+import 'package:simservers/utilities/elevated_button_style.dart';
 import 'package:simservers/widgets/custom_container/custom_container.dart';
 import 'package:simservers/widgets/custom_text.dart';
 
@@ -55,19 +57,14 @@ class _AddNewDevicesState extends State<AddNewDevices> {
   }
 }
 
-
 class AddNewDeviceColumn extends StatelessWidget {
   const AddNewDeviceColumn({
     Key? key,
-    required TextEditingController deviceNameController,
-    required TextEditingController deviceKeyController,
-    required TextEditingController simBalanceController,
-    required TextEditingController devicePinController,
-  })  : deviceNameController = deviceNameController,
-        deviceKeyController = deviceKeyController,
-        simBalanceController = simBalanceController,
-        devicePinController = devicePinController,
-        super(key: key);
+    required this.deviceNameController,
+    required this.deviceKeyController,
+    required this.simBalanceController,
+    required this.devicePinController,
+  }) : super(key: key);
 
   final TextEditingController deviceNameController;
   final TextEditingController deviceKeyController;
@@ -76,76 +73,108 @@ class AddNewDeviceColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        CustomText(text: "DeviceName", fontSize: 10.87.sp),
-        SizedBox(height: 2.8.h),
-        CustomTextFormField(
-          controller: deviceNameController,
-          keyboardType: TextInputType.text,
-          inputAction: TextInputAction.next,
-          width: 311.5.w,
-          height: 38.27.h,
+    return GestureDetector(
+      onTap: kUnfocus,
+      child: Padding(
+        padding: EdgeInsets.all(5.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CustomText(text: "Device Name", fontSize: 10.87.sp),
+            SizedBox(height: 2.8.h),
+            CustomTextFormField(
+              controller: deviceNameController,
+              keyboardType: TextInputType.text,
+              inputAction: TextInputAction.next,
+              width: 311.5.w,
+              height: 38.27.h,
+            ),
+            SizedBox(height: 11.77.h),
+            CustomText(text: "Device Key", fontSize: 10.87.sp),
+            SizedBox(height: 2.8.h),
+            CustomTextFormField(
+              controller: deviceKeyController,
+              keyboardType: TextInputType.text,
+              inputAction: TextInputAction.next,
+              width: 311.5.w,
+              height: 38.27.h,
+            ),
+            SizedBox(height: 11.77.h),
+            CustomText(text: "Sim Slot", fontSize: 10.87.sp),
+            CustomContainer(
+              colour: const Color(0xFFECEEF6),
+              height: 38.27.h,
+              width: 311.5.w,
+              borderRadius: BorderRadius.circular(5.0.r),
+              containerChild: Padding(
+                padding:
+                    EdgeInsets.only(left: 8.15.w, top: 10.2, bottom: 12.07),
+                child: CustomText(text: "Sim 1", fontSize: 10.87.sp),
+              ),
+            ),
+            SizedBox(height: 11.77.h),
+            CustomText(text: "Sim Balance", fontSize: 10.87.sp),
+            SizedBox(height: 2.8.h),
+            CustomTextFormField(
+              controller: simBalanceController,
+              keyboardType:
+                  const TextInputType.numberWithOptions(decimal: true),
+              inputAction: TextInputAction.next,
+              width: 311.5.w,
+              height: 38.27.h,
+            ),
+            SizedBox(height: 11.77.h),
+            CustomText(text: "Device Status", fontSize: 10.87.sp),
+            CustomContainer(
+              colour: const Color(0xFFECEEF6),
+              height: 38.27.h,
+              width: 311.5.w,
+              borderRadius: BorderRadius.circular(5.0.r),
+              containerChild: Padding(
+                padding:
+                    EdgeInsets.only(left: 8.15.w, top: 10.2, bottom: 12.07),
+                child: CustomText(text: "Not Active", fontSize: 10.87.sp),
+              ),
+            ),
+            SizedBox(height: 11.77.h),
+            CustomText(text: "Device Processes", fontSize: 10.87.sp),
+            SizedBox(height: 2.8.h),
+            CustomContainer(
+              colour: const Color(0xFFECEEF6),
+              height: 38.27.h,
+              width: 311.5.w,
+              borderRadius: BorderRadius.circular(5.0.r),
+              containerChild: Padding(
+                padding:
+                    EdgeInsets.only(left: 8.15.w, top: 10.2, bottom: 12.07),
+                child: CustomText(text: "Sms", fontSize: 10.87.sp),
+              ),
+            ),
+            SizedBox(height: 11.77.h),
+            CustomText(text: "Device Pin", fontSize: 10.87.sp),
+            SizedBox(height: 2.8.h),
+            CustomTextFormField(
+              controller: devicePinController,
+              keyboardType: TextInputType.number,
+              inputAction: TextInputAction.next,
+              width: 311.5.w,
+              height: 38.27.h,
+            ),
+            SizedBox(height: 19.02.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                CustomElevatedButton(
+                  onClick: () {},
+                  backgroundColour: kWhite,
+                  borderSideColour: kBlack,
+                  child: Text(""),
+                ),
+              ],
+            ),
+          ],
         ),
-        SizedBox(height: 11.77.h),
-        CustomText(text: "Device Key", fontSize: 10.87.sp),
-        SizedBox(height: 2.8.h),
-        CustomTextFormField(
-          controller: deviceKeyController,
-          keyboardType: TextInputType.text,
-          inputAction: TextInputAction.next,
-          width: 311.5.w,
-          height: 38.27.h,
-        ),
-        SizedBox(height: 11.77.h),
-        CustomText(text: "Sim Slot", fontSize: 10.87.sp),
-        CustomContainer(
-          height: 38.27.h,
-          width: 311.5.w,
-          containerChild: Align(
-            alignment: Alignment.centerLeft,
-            child: CustomText(text: "Sim 1", fontSize: 10.87.sp),
-          ),
-        ),
-        SizedBox(height: 11.77.h),
-        CustomText(text: "Sim Balance", fontSize: 10.87.sp),
-        SizedBox(height: 2.8.h),
-        CustomTextFormField(
-          controller: simBalanceController,
-          keyboardType: const TextInputType.numberWithOptions(decimal: true),
-          inputAction: TextInputAction.next,
-          width: 311.5.w,
-          height: 38.27.h,
-        ),
-        SizedBox(height: 11.77.h),
-        CustomText(text: "Device Status", fontSize: 10.87.sp),
-        CustomContainer(
-          height: 38.27.h,
-          width: 311.5.w,
-          containerChild: const CustomText(
-            text: "Not Active",
-          ),
-        ),
-        SizedBox(height: 11.77.h),
-        CustomText(text: "Device Processes", fontSize: 10.87.sp),
-        SizedBox(height: 2.8.h),
-        CustomContainer(
-          height: 38.27.h,
-          width: 311.5.w,
-          containerChild: const CustomText(text: "Sms"),
-        ),
-        SizedBox(height: 11.77.h),
-        CustomText(text: "Device Pin", fontSize: 10.87.sp),
-        SizedBox(height: 2.8.h),
-        CustomTextFormField(
-          controller: devicePinController,
-          keyboardType: TextInputType.number,
-          inputAction: TextInputAction.next,
-          width: 311.5.w,
-          height: 38.27.h,
-        ),
-      ],
+      ),
     );
   }
 }

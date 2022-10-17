@@ -19,7 +19,6 @@ class _RegisterSimServiceState extends State<RegisterSimService> {
   final _simBalanceController = TextEditingController();
   final _devicePinController = TextEditingController();
 
-
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -40,19 +39,16 @@ class _RegisterSimServiceState extends State<RegisterSimService> {
             colour: kBlack,
             fontWeight: FontWeight.w500,
           ),
-          bottom: _buildTabBar(context),
+          bottom: _buildTabBar(context, _deviceNameController, _deviceKeyController, _simBalanceController, _devicePinController),
           centerTitle: true,
         ),
-        body: GestureDetector(
-          onTap: kUnfocus,
-          child: const Center(
-            child: TabBarView(
-              children: [
-                Center(child: Text("data")),
-                Center(child: Text("data")),
-                Center(child: Text("data")),
-              ],
-            ),
+        body: const Center(
+          child: TabBarView(
+            children: [
+              Center(child: Text("data")),
+              Center(child: Text("data")),
+              Center(child: Text("data")),
+            ],
           ),
         ),
       ),
@@ -60,7 +56,8 @@ class _RegisterSimServiceState extends State<RegisterSimService> {
   }
 }
 
-PreferredSizeWidget _buildTabBar(BuildContext context) {
+PreferredSizeWidget _buildTabBar(BuildContext context, deviceNameController,
+    deviceKeyController, simBalanceController, devicePinController) {
   return TabBar(
     indicatorColor: Colors.transparent,
     tabs: [
@@ -75,7 +72,7 @@ PreferredSizeWidget _buildTabBar(BuildContext context) {
             context: context,
             builder: (BuildContext context) {
               return AlertDialog(
-                contentPadding: const EdgeInsets.all(10.0),
+                contentPadding: const EdgeInsets.all(20.0),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0.r),
                 ),
@@ -83,14 +80,18 @@ PreferredSizeWidget _buildTabBar(BuildContext context) {
                   child: SizedBox(
                     height: 575.0.w,
                     width: 354.96.w,
-                    child: AddNewDeviceColumn(deviceNameController:,),
+                    child: AddNewDeviceColumn(
+                      deviceNameController: deviceNameController,
+                      deviceKeyController: deviceKeyController,
+                      simBalanceController: simBalanceController,
+                      devicePinController: devicePinController,
+                    ),
                   ),
                 ),
               );
             },
           );
         },
-
       ),
       CustomTextButton(
         height: 40.0.h,
