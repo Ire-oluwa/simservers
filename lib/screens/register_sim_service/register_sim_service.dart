@@ -39,16 +39,24 @@ class _RegisterSimServiceState extends State<RegisterSimService> {
             colour: kBlack,
             fontWeight: FontWeight.w500,
           ),
-          bottom: _buildTabBar(context, _deviceNameController, _deviceKeyController, _simBalanceController, _devicePinController),
+          bottom: _buildTabBar(
+              context,
+              _deviceNameController,
+              _deviceKeyController,
+              _simBalanceController,
+              _devicePinController),
           centerTitle: true,
         ),
-        body: const Center(
-          child: TabBarView(
-            children: [
-              Center(child: Text("data")),
-              Center(child: Text("data")),
-              Center(child: Text("data")),
-            ],
+        body: GestureDetector(
+          onTap: kUnfocus,
+          child: const Center(
+            child: TabBarView(
+              children: [
+                Center(child: Text("data")),
+                Center(child: Text("data")),
+                Center(child: Text("data")),
+              ],
+            ),
           ),
         ),
       ),
@@ -62,6 +70,7 @@ PreferredSizeWidget _buildTabBar(BuildContext context, deviceNameController,
     indicatorColor: Colors.transparent,
     tabs: [
       CustomTextButton(
+        textColour: kWhite,
         backgroundColour: const Color(0xFF20B45B),
         height: 40.0.h,
         width: 160.0.w,
@@ -72,7 +81,7 @@ PreferredSizeWidget _buildTabBar(BuildContext context, deviceNameController,
             context: context,
             builder: (BuildContext context) {
               return AlertDialog(
-                contentPadding: const EdgeInsets.all(20.0),
+                contentPadding: const EdgeInsets.all(10.0),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0.r),
                 ),
@@ -97,6 +106,7 @@ PreferredSizeWidget _buildTabBar(BuildContext context, deviceNameController,
         height: 40.0.h,
         width: 160.0.w,
         title: "Reset",
+        textColour: kWhite,
         //TODO: pop-up to reset settings.
         onClick: () {
           AlertDialog();
@@ -104,6 +114,7 @@ PreferredSizeWidget _buildTabBar(BuildContext context, deviceNameController,
         backgroundColour: const Color(0xFF5A9FFC),
       ),
       CustomTextButton(
+        textColour: kWhite,
         height: 40.0.h,
         width: 160.0.w,
         title: "Delete",

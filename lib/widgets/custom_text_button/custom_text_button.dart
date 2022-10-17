@@ -10,10 +10,14 @@ class CustomTextButton extends StatelessWidget {
     required this.backgroundColour,
     required this.height,
     required this.width,
+    this.borderColour,
+    required this.textColour,
   }) : super(key: key);
   final String title;
   final void Function() onClick;
   final Color backgroundColour;
+  final Color? borderColour;
+  final Color textColour;
   final double height;
   final double width;
 
@@ -25,13 +29,14 @@ class CustomTextButton extends StatelessWidget {
       child: TextButton(
         onPressed: onClick,
         style: TextButton.styleFrom(
+          side: BorderSide(color: borderColour ?? Colors.black54),
           backgroundColor: backgroundColour,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10.0.r),
           ),
         ),
         child: Center(
-          child: Text(title, style: const TextStyle(color: kWhite)),
+          child: Text(title, style: TextStyle(color: textColour)),
         ),
       ),
     );
