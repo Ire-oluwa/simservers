@@ -29,6 +29,7 @@ class ApiTile extends StatelessWidget {
         borderRadius: BorderRadius.circular(3.0.r),
         boxShadowColour: kWhite,
         containerChild: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Checkbox(value: isChecked, onChanged: checkBoxCallBack),
             CustomText(

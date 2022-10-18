@@ -14,6 +14,8 @@ class ApiSettings extends StatefulWidget {
 }
 
 class _ApiSettingsState extends State<ApiSettings> {
+  late bool checked = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +46,16 @@ class _ApiSettingsState extends State<ApiSettings> {
             () {},
           ),
           SizedBox(height: 19.0.h),
-          ApiList(),
+          SizedBox(
+            height: MediaQuery.of(context).size.height,
+            child: ApiList(
+              checkBoxCallBack: (value) {
+                setState(() {
+                  //bool = value;
+                });
+              },
+            ),
+          ),
         ],
       ),
     );

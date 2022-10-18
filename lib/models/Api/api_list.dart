@@ -4,7 +4,8 @@ import 'package:simservers/models/Api/api_data.dart';
 import 'package:simservers/widgets/api_tile/api_tile.dart';
 
 class ApiList extends StatelessWidget {
-  const ApiList({Key? key}) : super(key: key);
+  const ApiList({Key? key, required this.checkBoxCallBack}) : super(key: key);
+  final void Function(bool?) checkBoxCallBack;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class ApiList extends StatelessWidget {
               final api = apiData.api[index];
               return ApiTile(
                 isChecked: api.isChecked,
-                checkBoxCallBack: (checkBoxState){},
+                checkBoxCallBack: checkBoxCallBack,
                 deviceName: api.apiName,
                 deviceId: api.deviceId,
                 onClick: api.editDevice,
