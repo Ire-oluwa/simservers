@@ -29,7 +29,7 @@ class CustomTextButton extends StatelessWidget {
       child: TextButton(
         onPressed: onClick,
         style: TextButton.styleFrom(
-          side: BorderSide(color: borderColour ?? Colors.black54),
+          side: BorderSide(color: borderColour ?? Colors.transparent),
           backgroundColor: backgroundColour,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10.0.r),

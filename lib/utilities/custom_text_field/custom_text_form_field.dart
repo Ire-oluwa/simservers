@@ -16,6 +16,7 @@ class CustomTextFormField extends StatelessWidget {
     this.onKeyUp,
     required this.width,
     required this.height,
+    this.readOnly,
   }) : super(key: key);
 
   final TextEditingController controller;
@@ -30,6 +31,7 @@ class CustomTextFormField extends StatelessWidget {
   final Function(String)? onKeyUp;
   final double width;
   final double height;
+  final bool? readOnly;
 
   @override
   Widget build(BuildContext context) {

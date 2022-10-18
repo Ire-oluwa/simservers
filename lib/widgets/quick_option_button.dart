@@ -36,12 +36,12 @@ class QuickOption extends StatelessWidget {
             CustomText(
               text: firstText,
               colour: kWhite,
-              fontSize: 16.0.sp,
+              fontSize: 15.0.sp,
             ),
             CustomText(
               text: secondText,
               colour: kWhite,
-              fontSize: 16.0.sp,
+              fontSize: 14.0.sp,
             ),
           ],
         ),

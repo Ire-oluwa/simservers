@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -28,7 +29,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: GestureDetector(
-        onTap: FocusScope.of(context).unfocus,
+        onTap: kUnfocus,
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -85,7 +86,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                         SizedBox(height: 10.0.h),
                         CustomTextFormField(
-                          controller: _fullNameController,
+                          controller: _emailController,
                           keyboardType: TextInputType.name,
                           inputAction: TextInputAction.next,
                           placeholder: "Email",
@@ -126,37 +127,28 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               SizedBox(height: 23.0.h),
               Padding(
-                padding: EdgeInsets.only(left: 77.0.w, right: 115.0.w),
+                padding: EdgeInsets.only(left: 67.0.w),
                 child: Row(
                   children: [
-                    SizedBox(
-                      width: 18.0.w,
-                      height: 16.0.h,
-                      child: Checkbox(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                        ),
+                    Checkbox(
                         value: _isChecked,
                         onChanged: (value) {
                           setState(() {
-                            _isChecked = value!;
+                            _isChecked = !_isChecked;
                           });
-                        },
-                      ),
-                    ),
-                    SizedBox(width: 12.0.w),
-                    Text("I agree to the ",
-                        style: GoogleFonts.poppins(
-                          fontSize: 14.0.sp,
-                          fontWeight: FontWeight.bold,
-                        )),
-                    GestureDetector(
-                      onTap: () {},
-                      child: Text(
-                        "Terms and Conditions",
-                        style: GoogleFonts.poppins(
-                          color: kSubmissionButtonColour,
-                          fontSize: 14.0.sp,
+                        }),
+                    Expanded(
+                      child: RichText(
+                        text: TextSpan(
+                          text: "I agree to the ",
+                          style: TextStyle(color: kBlack),
+                          children: [
+                            TextSpan(
+                              text: "terms and conditions",
+                              style: TextStyle(color: kSecondaryBlue),
+                              recognizer: TapGestureRecognizer()..onTap = () {},
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -164,6 +156,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
               ),
               SizedBox(height: 20.0.h),
+              //SignUp button
               SizedBox(
                 width: 212.12.w,
                 height: 47.h,

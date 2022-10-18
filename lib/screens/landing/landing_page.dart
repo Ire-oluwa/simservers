@@ -72,7 +72,10 @@ class LandingPage extends StatelessWidget {
                   onClick: () {
                     Navigator.of(context).pushNamed(SignUpScreen.id);
                   },
+                  borderSideColour: Colors.transparent,
                   backgroundColour: kButtonColour,
+                  height: 40.0.h,
+                  width: 134.0.w,
                   child: const CustomText(
                     text: "Sign Up",
                     colour: kWhite,
@@ -80,10 +83,13 @@ class LandingPage extends StatelessWidget {
                 ),
                 SizedBox(width: 24.5.w),
                 CustomElevatedButton(
+                  borderSideColour: Colors.transparent,
                   onClick: () {
                     Navigator.pushNamed(context, SignInScreen.id);
                   },
                   backgroundColour: kButtonColour,
+                  height: 40.0.h,
+                  width: 134.0.w,
                   child: const CustomText(
                     text: "Login",
                     colour: kWhite,

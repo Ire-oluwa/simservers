@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:simservers/constants/app_constants.dart';
+import 'package:simservers/screens/activate_cloud_service/activate_cloud_service.dart';
 import 'package:simservers/screens/register_sim_service/register_sim_service.dart';
 import 'package:simservers/widgets/custom_text.dart';
 
@@ -36,7 +37,14 @@ class _UserPanelScreenState extends State<UserPanelScreen> {
                   context,
                   Icons.lock,
                   "Activate Cloud Services",
-                  () {},
+                  () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ActivateCloudServices(),
+                      ),
+                    );
+                  },
                 ),
                 SizedBox(height: 16.0.h),
                 _buildListTile(

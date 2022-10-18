@@ -93,12 +93,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   const CircleAvatar(),
                   SizedBox(width: 21.6.w),
                   const CustomText(text: "David James", colour: kWhite),
-                  SizedBox(width: 113.0.w),
+                  SizedBox(width: 83.0.w),
                   IconButton(
-                      icon: const Icon(Icons.close, color: kWhite),
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      }),
+                    icon: const Icon(Icons.close, color: kWhite),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                  ),
                 ],
               ),
             ),

@@ -10,6 +10,9 @@ class CustomElevatedButton extends StatelessWidget {
     this.elevation,
     this.borderSideWidth,
     this.borderSideColour,
+    this.borderRadius,
+    required this.height,
+    required this.width,
   }) : super(key: key);
   final void Function() onClick;
   final Widget child;
@@ -17,11 +20,15 @@ class CustomElevatedButton extends StatelessWidget {
   final double? elevation;
   final double? borderSideWidth;
   final Color? borderSideColour;
+  final double? borderRadius;
+  final double height;
+  final double width;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 130.0.w,
+      height: height,
+      width: width,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           side: BorderSide(
@@ -30,7 +37,7 @@ class CustomElevatedButton extends StatelessWidget {
           backgroundColor: backgroundColour,
           elevation: elevation,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20.0.r),
+            borderRadius: BorderRadius.circular(borderRadius ?? 10.0.r),
           ),
         ),
         onPressed: onClick,

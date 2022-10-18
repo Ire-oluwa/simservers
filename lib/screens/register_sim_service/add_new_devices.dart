@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 import 'package:simservers/constants/app_constants.dart';
+import 'package:simservers/models/new_device/new_device_data.dart';
 import 'package:simservers/utilities/custom_text_field/custom_text_form_field.dart';
 import 'package:simservers/utilities/elevated_button_style.dart';
 import 'package:simservers/widgets/custom_container/custom_container.dart';
@@ -41,106 +43,15 @@ class _AddNewDevicesState extends State<AddNewDevices> {
                 child: Center(
                   child: SizedBox(
                     width: 354.96.w,
-                    height: 575.0.h,
+                    height: 475.0.h,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        CustomText(text: "DeviceName", fontSize: 10.87.sp),
-                        SizedBox(height: 2.8.h),
-                        CustomTextFormField(
-                          controller: _deviceNameController,
-                          keyboardType: TextInputType.text,
-                          inputAction: TextInputAction.next,
-                          width: 311.5.w,
-                          height: 38.27.h,
-                        ),
-                        SizedBox(height: 11.77.h),
-                        CustomText(text: "Device Key", fontSize: 10.87.sp),
-                        SizedBox(height: 2.8.h),
-                        CustomTextFormField(
-                          controller: _deviceKeyController,
-                          keyboardType: TextInputType.text,
-                          inputAction: TextInputAction.next,
-                          width: 311.5.w,
-                          height: 38.27.h,
-                        ),
-                        SizedBox(height: 11.77.h),
-                        CustomText(text: "Sim Slot", fontSize: 10.87.sp),
-                        CustomContainer(
-                          height: 38.27.h,
-                          width: 311.5.w,
-                          containerChild: Align(
-                            alignment: Alignment.centerLeft,
-                            child:
-                                CustomText(text: "Sim 1", fontSize: 10.87.sp),
-                          ),
-                        ),
-                        SizedBox(height: 11.77.h),
-                        CustomText(text: "Sim Balance", fontSize: 10.87.sp),
-                        SizedBox(height: 2.8.h),
-                        CustomTextFormField(
-                          controller: _simBalanceController,
-                          keyboardType: const TextInputType.numberWithOptions(
-                              decimal: true),
-                          inputAction: TextInputAction.next,
-                          width: 311.5.w,
-                          height: 38.27.h,
-                        ),
-                        SizedBox(height: 11.77.h),
-                        CustomText(text: "Device Status", fontSize: 10.87.sp),
-                        CustomContainer(
-                          height: 38.27.h,
-                          width: 311.5.w,
-                          containerChild: const CustomText(
-                            text: "Not Active",
-                          ),
-                        ),
-                        SizedBox(height: 11.77.h),
-                        CustomText(
-                            text: "Device Processes", fontSize: 10.87.sp),
-                        SizedBox(height: 2.8.h),
-                        CustomContainer(
-                          height: 38.27.h,
-                          width: 311.5.w,
-                          containerChild: const CustomText(text: "Sms"),
-                        ),
-                        SizedBox(height: 11.77.h),
-                        CustomText(text: "Device Pin", fontSize: 10.87.sp),
-                        SizedBox(height: 2.8.h),
-                        CustomTextFormField(
-                          controller: _devicePinController,
-                          keyboardType: TextInputType.number,
-                          inputAction: TextInputAction.next,
-                          width: 311.5.w,
-                          height: 38.27.h,
-                        ),
-                        SizedBox(height: 19.02.h),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            CustomTextButton(
-                              title: "Close",
-                              textColour: kBlack,
-                              onClick: () {
-                                Navigator.of(context).pop();
-                              },
-                              backgroundColour: kWhite,
-                              borderColour: kSecondaryBlue,
-                              height: 26.26.h,
-                              width: 102.32.w,
-                            ),
-                            SizedBox(width: 12.68.w),
-                            CustomTextButton(
-                              title: "Save",
-                              textColour: kWhite,
-                              onClick: () {
-                                // Navigator.of(context).pop();
-                              },
-                              backgroundColour: kWhite,
-                              height: 26.26.h,
-                              width: 102.32.w,
-                            ),
-                          ],
+                        AddNewDeviceColumn(
+                          deviceNameController: _deviceNameController,
+                          deviceKeyController: _deviceKeyController,
+                          simBalanceController: _simBalanceController,
+                          devicePinController: _devicePinController,
                         ),
                       ],
                     ),
@@ -174,7 +85,7 @@ class AddNewDeviceColumn extends StatelessWidget {
     return GestureDetector(
       onTap: kUnfocus,
       child: Padding(
-        padding: EdgeInsets.all(5.0),
+        padding: const EdgeInsets.all(5.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -262,11 +173,40 @@ class AddNewDeviceColumn extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                CustomElevatedButton(
-                  onClick: () {},
-                  backgroundColour: kWhite,
-                  borderSideColour: kBlack,
-                  child: Text(""),
+                SizedBox(
+                  width: 102.32.w,
+                  height: 26.26.h,
+                  child: CustomElevatedButton(
+                    borderRadius: 10.0.r,
+                    onClick: () {
+                      Navigator.pop(context);
+                    },
+                    backgroundColour: kWhite,
+                    borderSideColour: kBlack,
+                    height: 26.26.h,
+                    width: 102.32.w,
+                    child: CustomText(
+                      text: "Close",
+                      colour: kBlack,
+                      fontSize: 9.06.sp,
+                    ),
+                  ),
+                ),
+                SizedBox(width: 12.68.w),
+                SizedBox(
+                  height: 26.26.h,
+                  width: 102.32.w,
+                  child: CustomElevatedButton(
+                    borderRadius: 10.0.r,
+                    onClick: () {
+                      Provider.of<NewDeviceData>(context).addDevice(
+                          deviceNameController.text, deviceKeyController.text);
+                    },
+                    backgroundColour: kPrimaryBlue,
+                    height: 26.26.h,
+                    width: 102.32.w,
+                    child: CustomText(text: "Add device", fontSize: 9.06.sp),
+                  ),
                 ),
               ],
             ),
