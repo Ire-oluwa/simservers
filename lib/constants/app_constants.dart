@@ -13,7 +13,9 @@ const kSubmissionButtonColour = Color(0xFF467BFB);
 const kLightBorderSide = BorderSide(width: 1.0, color: Colors.black12);
 const kDimTextColour = Color(0xFF020614);
 const kPasswordInputType = TextInputType.visiblePassword;
-const kTextInputAction = TextInputAction.next;
+const kNameInputType = TextInputType.text;
+const kNextInputAction = TextInputAction.next;
+const kLabelTextColour = Color(0xFF575757);
 
 
 VoidCallback kUnfocus = () {

@@ -7,7 +7,6 @@ import 'package:simservers/utilities/custom_text_field/custom_text_form_field.da
 import 'package:simservers/utilities/elevated_button_style.dart';
 import 'package:simservers/widgets/custom_container/custom_container.dart';
 import 'package:simservers/widgets/custom_text.dart';
-import 'package:simservers/widgets/custom_text_button/custom_text_button.dart';
 
 class AddNewDevices extends StatefulWidget {
   const AddNewDevices({Key? key}) : super(key: key);
@@ -200,7 +199,9 @@ class AddNewDeviceColumn extends StatelessWidget {
                     borderRadius: 10.0.r,
                     onClick: () {
                       Provider.of<NewDeviceData>(context).addDevice(
-                          deviceNameController.text, deviceKeyController.text);
+                        deviceNameController.text,
+                        deviceKeyController.text,
+                      );
                     },
                     backgroundColour: kPrimaryBlue,
                     height: 26.26.h,

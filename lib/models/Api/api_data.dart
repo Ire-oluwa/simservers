@@ -18,6 +18,10 @@ class ApiData extends ChangeNotifier {
     return UnmodifiableListView(_api);
   }
 
+  int get index{
+    return api.indexOf(api);
+  }
+
   void addApi(apiName, deviceId, isChecked) {
     final api = Api(
         apiName: apiName,

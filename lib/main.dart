@@ -4,7 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:simservers/models/Api/api_data.dart';
 import 'package:simservers/models/new_device/new_device_data.dart';
+import 'package:simservers/providers/add_api_provider/add_api_provider.dart';
 import 'package:simservers/providers/device_info_provider.dart';
+import 'package:simservers/providers/transactions_provider/transactions_provider.dart';
 import 'package:simservers/screens/api_settings/api_settings.dart';
 import 'package:simservers/screens/change_password/change_password.dart';
 import 'package:simservers/screens/edit_profile/edit_profile.dart';
@@ -33,6 +35,8 @@ void main() {
         ChangeNotifierProvider(create: (_) => SetTransactionsPinProvider()),
         ChangeNotifierProvider(create: (_) => ResetApiKeyProvider()),
         ChangeNotifierProvider(create: (_) => ApiData()),
+        ChangeNotifierProvider(create: (_) => AddApiProvider()),
+        ChangeNotifierProvider(create: (_) => TransactionProvider()),
       ],
       child: const SimServers(),
     ),

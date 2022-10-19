@@ -1,7 +1,9 @@
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:simservers/constants/app_constants.dart';
 import 'package:simservers/widgets/custom_text.dart';
+import 'package:simservers/widgets/line_chart_title/line_chart_title.dart';
 import 'package:simservers/widgets/quick_option_button.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -19,6 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Container(
           color: const Color(0xFFF4F7FB),
           child: SingleChildScrollView(
+            physics: ClampingScrollPhysics(),
             child: Column(
               children: [
                 Container(
@@ -154,12 +157,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       height: 317.0.h,
                       decoration: BoxDecoration(
                         // color: Colors.blue,
-                        color: kWhite,
+                        color: Color(0xFFF2F2F2),
                         borderRadius: BorderRadius.circular(8.0.r),
                       ),
+                      child: _buildLineChart(),
                     ),
                   ),
                 ),
+                SizedBox(height: 27.0.h),
               ],
             ),
           ),
@@ -167,4 +172,41 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+}
+
+Widget _buildLineChart() {
+  return LineChart(
+    LineChartData(
+      minX: 0,
+      maxX: 6,
+      minY: 0,
+      maxY: 5,
+      titlesData: LineChartTitle.getTitleData(),
+      gridData: FlGridData(
+        drawVerticalLine: false,
+        // getDrawingHorizontalLine: (value){
+        //   return FlLine();
+        // },
+      ),
+      borderData: FlBorderData(
+        show: false,
+      ),
+      lineBarsData: [
+        LineChartBarData(
+          dotData: FlDotData(show: false,),
+          barWidth: 5.0.w,
+          color: Color(0xFF23B371),
+          isCurved: true,
+          spots: [
+            FlSpot(0.3, 1.5),
+            FlSpot(1.5, 2.2),
+            FlSpot(2, 3),
+            FlSpot(3, 3.5),
+            FlSpot(4, 2),
+            FlSpot(5, 4),
+          ],
+        ),
+      ],
+    ),
+  );
 }

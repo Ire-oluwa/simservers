@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:simservers/constants/app_constants.dart';
 import 'package:simservers/screens/home_screen/home_screen.dart';
 import 'package:simservers/screens/settings/settings.dart';
@@ -19,6 +21,8 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
+  final String assetName = 'assets/svgs/icon-park_setting-config.svg';
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   final List<Widget> _screens = [
     const HomeScreen(),
     const StatisticsScreen(),
@@ -58,26 +62,43 @@ class _DashboardScreenState extends State<DashboardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBody: true,
+      // extendBody: true,
       appBar: AppBar(
+        leading: Builder(
+          builder: (context) {
+            return IconButton(
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              icon: FaIcon(
+                FontAwesomeIcons.bars,
+                color: _selectedIndex == 2 ? kBlack : kWhite,
+              ),
+            );
+          },
+        ),
         elevation: 0.0,
-        backgroundColor: kPrimaryBlue,
+        backgroundColor: _selectedIndex == 2 ? kTransparent : kPrimaryBlue,
         title: CustomText(
           text: _selectedIndex == 0
               ? ""
               : _selectedIndex == 1
                   ? "Statistics"
                   : _selectedIndex == 2
-                      ? "Transactions"
+                      ? "Wallet History"
                       : _selectedIndex == 3
                           ? "User Panel"
                           : _selectedIndex == 4
                               ? "Settings"
                               : "",
+          colour: _selectedIndex == 2 ? kBlack : kWhite,
         ),
         centerTitle: true,
         actions: [
-          const Icon(Icons.notifications_none_outlined),
+          Icon(
+            Icons.notifications_none_outlined,
+            color: _selectedIndex == 2 ? kBlack : kWhite,
+          ),
           SizedBox(width: 19.0.w),
         ],
       ),
