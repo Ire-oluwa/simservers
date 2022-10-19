@@ -9,7 +9,7 @@ class LineChartTitle {
       bottomTitles: AxisTitles(
           sideTitles: SideTitles(
         showTitles: false,
-            reservedSize: 30.0,
+            // reservedSize: 30.0,
       )),
     );
   }

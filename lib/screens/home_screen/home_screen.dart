@@ -135,34 +135,38 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
                 SizedBox(height: 11.77.h),
-                Container(
-                  height: 438.0.h,
-                  width: 428.0.w,
-                  decoration: BoxDecoration(
-                    color: kContainerWhite,
-                    // color: Colors.green,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(60.0.r),
-                      topRight: Radius.circular(60.0.r),
-                    ),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.only(
-                      top: 29.0.h,
-                      left: 21.0.w,
-                      right: 21.0.w,
-                    ),
-                    child: Container(
-                      width: 386.0.w,
-                      height: 317.0.h,
+                Stack(
+                  children: [
+                    Container(
+                      height: 438.0.h,
+                      width: 428.0.w,
                       decoration: BoxDecoration(
-                        // color: Colors.blue,
-                        color: Color(0xFFF2F2F2),
-                        borderRadius: BorderRadius.circular(8.0.r),
+                        color: kContainerWhite,
+                        // color: Colors.green,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(60.0.r),
+                          topRight: Radius.circular(60.0.r),
+                        ),
                       ),
-                      child: _buildLineChart(),
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                          top: 29.0.h,
+                          left: 21.0.w,
+                          right: 21.0.w,
+                        ),
+                        child: Container(
+                          width: 386.0.w,
+                          height: 317.0.h,
+                          decoration: BoxDecoration(
+                            // color: Colors.blue,
+                            color: const Color(0xFFF2F2F2),
+                            borderRadius: BorderRadius.circular(8.0.r),
+                          ),
+                          child: _buildLineChart(),
+                        ),
+                      ),
                     ),
-                  ),
+                  ],
                 ),
                 SizedBox(height: 27.0.h),
               ],
@@ -193,7 +197,9 @@ Widget _buildLineChart() {
       ),
       lineBarsData: [
         LineChartBarData(
-          dotData: FlDotData(show: false,),
+          dotData: FlDotData(
+            show: false,
+          ),
           barWidth: 5.0.w,
           color: Color(0xFF23B371),
           isCurved: true,

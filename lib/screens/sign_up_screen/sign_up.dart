@@ -22,6 +22,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final _emailController = TextEditingController();
   final _phoneNumberController = TextEditingController();
   final _passwordController = TextEditingController();
+  final _confirmPasswordController = TextEditingController();
   bool _obscurePassword = true;
   bool _isChecked = false;
 
@@ -95,7 +96,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                         SizedBox(height: 10.0.h),
                         CustomTextFormField(
-                          controller: _fullNameController,
+                          controller: _phoneNumberController,
                           keyboardType: TextInputType.name,
                           inputAction: TextInputAction.next,
                           placeholder: "Phone Number",
@@ -104,7 +105,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                         SizedBox(height: 10.0.h),
                         CustomTextFormField(
-                          controller: _fullNameController,
+                          controller: _passwordController,
                           keyboardType: TextInputType.name,
                           inputAction: TextInputAction.next,
                           placeholder: "Password",
@@ -113,7 +114,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                         SizedBox(height: 10.0.h),
                         CustomTextFormField(
-                          controller: _fullNameController,
+                          controller: _confirmPasswordController,
                           keyboardType: TextInputType.name,
                           inputAction: TextInputAction.next,
                           placeholder: "Confirm Password",

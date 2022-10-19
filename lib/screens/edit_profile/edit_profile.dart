@@ -58,6 +58,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       body: GestureDetector(
         onTap: kUnfocus,
         child: SingleChildScrollView(
+          physics: ClampingScrollPhysics(),
           child: Form(
             key: _editProfileFormKey,
             child: SizedBox(
@@ -88,7 +89,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     context.read<EditProvider>().phoneNumber,
                     TextInputType.number,
                     TextInputAction.next,
-                    "Phone num ber",
+                    "Phone number",
                     readOnly,
                     enabled,
                   ),
@@ -179,7 +180,7 @@ Widget _buildProfileDetail(
           colour: const Color(0xFF020614),
           fontSize: 12.0.sp,
         ),
-        SizedBox(height: 10.0.h),
+        SizedBox(height: 8.0.h),
         CustomTextFormField(
           enabled: enabled,
           controller: controller,
@@ -190,7 +191,7 @@ Widget _buildProfileDetail(
           readOnly: readOnly,
         ),
         SizedBox(
-          height: 14.0.h,
+          height: 7.0.h,
         ),
       ],
     ),
