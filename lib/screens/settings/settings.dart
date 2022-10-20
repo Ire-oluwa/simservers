@@ -6,8 +6,10 @@ import 'package:simservers/screens/edit_profile/edit_profile.dart';
 import 'package:simservers/screens/reset_api_key/reset_api_key.dart';
 import 'package:simservers/screens/set_transaction_pin/set_transaction_pin.dart';
 import 'package:simservers/screens/settings/change_password_in_settings/change_password_in_settings.dart';
+import 'package:simservers/widgets/app_bar/app_bar.dart';
 import 'package:simservers/widgets/custom_container/custom_container.dart';
 import 'package:simservers/widgets/custom_text.dart';
+import 'package:simservers/widgets/drawer_widget/drawer_widget.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({Key? key}) : super(key: key);
@@ -21,6 +23,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBarWidget(4),
+      drawer: const DrawerWidget(),
       body: CustomContainer(
         colour: kContainerWhite,
         height: 484.0.h,

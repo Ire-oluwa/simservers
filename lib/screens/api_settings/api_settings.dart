@@ -1,15 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
 import 'package:simservers/constants/app_constants.dart';
-import 'package:simservers/models/Api/api.dart';
-import 'package:simservers/models/Api/api_data.dart';
-import 'package:simservers/models/Api/api_list.dart';
-import 'package:simservers/providers/add_api_provider/add_api_provider.dart';
 import 'package:simservers/screens/register_sim_service/delete_device.dart';
 import 'package:simservers/screens/register_sim_service/reset_device.dart';
-import 'package:simservers/utilities/custom_text_field/custom_text_form_field.dart';
-import 'package:simservers/utilities/elevated_button_style.dart';
 import 'package:simservers/widgets/add_api/add_api.dart';
 import 'package:simservers/widgets/custom_container/custom_container.dart';
 import 'package:simservers/widgets/custom_text.dart';
@@ -24,8 +17,7 @@ class ApiSettings extends StatefulWidget {
 }
 
 class _ApiSettingsState extends State<ApiSettings> {
-  late bool checked = false;
-  final _api = ApiData().index;
+  late List<bool> checked = List<bool>.filled(8, false);
 
   @override
   Widget build(BuildContext context) {
@@ -60,11 +52,42 @@ class _ApiSettingsState extends State<ApiSettings> {
                 () {},
               ),
               SizedBox(height: 19.0.h),
-              ApiList(
-                checkBoxCallBack: (value) {
-                  setState(() {
-                    ApiData().api[ApiData().index].isChecked = value!;
-                  });
+              ListView.builder(
+                itemCount: 8,
+                shrinkWrap: true,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: EdgeInsets.only(bottom: 3.0.h),
+                    child: CustomContainer(
+                      height: 53.86.h,
+                      width: 387.0.w,
+                      containerChild: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Checkbox(
+                              value: checked[index],
+                              onChanged: (value) {
+                                setState(() {
+                                  checked[index] = value!;
+                                });
+                              }),
+                          CustomText(
+                            text: "Suleiman",
+                            fontSize: 12.62.sp,
+                            fontWeight: FontWeight.w500,
+                            colour: const Color(0xFF323C47),
+                          ),
+                          CustomText(
+                            text: "3234",
+                            fontSize: 12.62.sp,
+                            fontWeight: FontWeight.w500,
+                            colour: const Color(0xFF707683),
+                          ),
+                          TextButton(onPressed: (){}, child: CustomText(text: "Edit device", colour: const Color(0xFF707683), fontSize: 10.94.sp,),),
+                        ],
+                      ),
+                    ),
+                  );
                 },
               ),
             ],
@@ -131,7 +154,7 @@ Widget _buildApiSettingsButtons(
             showDialog(
               context: context,
               builder: (context) {
-                return const Delete();
+                return Delete(onClick: () {},);
               },
             );
           },

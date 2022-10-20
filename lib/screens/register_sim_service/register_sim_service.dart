@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
 import 'package:simservers/constants/app_constants.dart';
-import 'package:simservers/models/new_device/new_device_data.dart';
 import 'package:simservers/screens/register_sim_service/add_new_devices.dart';
 import 'package:simservers/screens/register_sim_service/delete_device.dart';
 import 'package:simservers/screens/register_sim_service/reset_device.dart';
+import 'package:simservers/widgets/custom_container/custom_container.dart';
 import 'package:simservers/widgets/custom_text.dart';
 import 'package:simservers/widgets/custom_text_button/custom_text_button.dart';
-import 'package:simservers/widgets/new_device_list/new_device_list.dart';
-import 'package:simservers/widgets/new_device_tile/new_device_tile.dart';
 
 class RegisterSimService extends StatefulWidget {
   const RegisterSimService({Key? key}) : super(key: key);
@@ -25,11 +22,10 @@ class _RegisterSimServiceState extends State<RegisterSimService> {
   final _simBalanceController = TextEditingController();
   final _devicePinController = TextEditingController();
   late int index;
-  late bool isChecked = false;
+  late List<bool> isChecked = List<bool>.filled(8, false);
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -50,15 +46,12 @@ class _RegisterSimServiceState extends State<RegisterSimService> {
       ),
       body: GestureDetector(
         onTap: kUnfocus,
-        child: Container(
-          width: 428.0.w,
-          height: 926.0.h,
-          padding: EdgeInsets.only(left: 29.0.w, right: 30.0.w),
-          child: SingleChildScrollView(
+        child: SingleChildScrollView(
+          child: Container(
+            padding: EdgeInsets.only(left: 29.0.w, right: 30.0.w),
             child: Column(
               children: [
                 SizedBox(
-                  width: size.width,
                   child: Divider(thickness: 2.0.h),
                 ),
                 Padding(
@@ -70,29 +63,42 @@ class _RegisterSimServiceState extends State<RegisterSimService> {
                       _simBalanceController,
                       _devicePinController),
                 ),
-                Consumer<NewDeviceData>(
-                  builder: (BuildContext context, newDeviceData, Widget? child) {
-                    return SizedBox(
-                      width: 428.0.w,
-                      height: 928.0.h,
-                      child: ListView.builder(
-                        itemBuilder: (BuildContext context, int index) {
-                          var device = newDeviceData.newDevice[index];
-                          return NewDeviceTile(
-                            device.isSelected,
-                            device.name,
-                            device.deviceId,
-
-                            const EditDeviceButton(),
-                            const AddCreditButton(),
-                                (value) {
-                              setState(() {
-                                device.isSelected = value!;
-                              });
-
-                            },
-                          );
-                        },
+                SizedBox(height: 17.0.h),
+                ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: 8,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: EdgeInsets.only(bottom: 3.0.h),
+                      child: CustomContainer(
+                        height: 53.86.h,
+                        width: 387.0.w,
+                        containerChild: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Checkbox(
+                                value: isChecked[index],
+                                onChanged: (value) {
+                                  setState(() {
+                                    isChecked[index] = value!;
+                                  });
+                                }),
+                            CustomText(
+                              text: "Suleiman",
+                              fontSize: 12.62.sp,
+                              fontWeight: FontWeight.w500,
+                              colour: const Color(0xFF323C47),
+                            ),
+                            CustomText(
+                              text: "3234",
+                              fontSize: 12.62.sp,
+                              fontWeight: FontWeight.w500,
+                              colour: const Color(0xFF707683),
+                            ),
+                            TextButton(onPressed: (){}, child: CustomText(text: "Edit device", colour: const Color(0xFF707683), fontSize: 10.94.sp,),),
+                            TextButton(onPressed: (){}, child: CustomText(text: "Add credit", colour: const Color(0xFF707683), fontSize: 10.94.sp,),),
+                          ],
+                        ),
                       ),
                     );
                   },
@@ -174,7 +180,7 @@ Widget _buildTabBar(BuildContext context, deviceNameController,
           showDialog(
             context: context,
             builder: (context) {
-              return Delete();
+              return Delete(onClick: () {},);
             },
           );
         },
@@ -183,3 +189,31 @@ Widget _buildTabBar(BuildContext context, deviceNameController,
     ],
   );
 }
+
+// Consumer<NewDeviceData>(
+//   builder: (BuildContext context, newDeviceData, Widget? child) {
+//     return SizedBox(
+//       width: 428.0.w,
+//       height: 928.0.h,
+//       child: ListView.builder(
+//         itemBuilder: (BuildContext context, int index) {
+//           var device = newDeviceData.newDevice[index];
+//           return NewDeviceTile(
+//             device.isSelected,
+//             device.name,
+//             device.deviceId,
+//
+//             const EditDeviceButton(),
+//             const AddCreditButton(),
+//                 (value) {
+//               setState(() {
+//                 device.isSelected = value!;
+//               });
+//
+//             },
+//           );
+//         },
+//       ),
+//     );
+//   },
+// ),

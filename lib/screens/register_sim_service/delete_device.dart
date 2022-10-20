@@ -7,8 +7,9 @@ import 'package:simservers/utilities/elevated_button_style.dart';
 import 'package:simservers/widgets/custom_text.dart';
 
 class Delete extends StatefulWidget {
-  const Delete({Key? key}) : super(key: key);
+  const Delete({Key? key, required this.onClick}) : super(key: key);
   static const String id = "delete";
+  final void Function() onClick;
 
   @override
   State<Delete> createState() => _DeleteState();
@@ -34,9 +35,7 @@ class _DeleteState extends State<Delete> {
               Column(
                 children: [
                   CustomElevatedButton(
-                    onClick: () {
-
-                    },
+                    onClick: widget.onClick,
                     backgroundColour: const Color(0xFFFE7062),
                     height: 18.0.h,
                     width: 85.0.w,

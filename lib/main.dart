@@ -22,6 +22,7 @@ import 'package:simservers/screens/splash/final_splash.dart';
 import 'package:simservers/screens/splash/initial_splash.dart';
 
 import 'providers/settings_provider/settings_provider.dart';
+import 'screens/admin_panel/admin_panel.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -76,6 +77,7 @@ class SimServers extends StatelessWidget {
             SetTransactionPin.id: (context) => const SetTransactionPin(),
             ResetApiKey.id: (context) => const ResetApiKey(),
             ApiSettings.id: (context) => const ApiSettings(),
+            AdminPanelScreen.id: (context) => const AdminPanelScreen(),
           },
         );
       },

@@ -3,8 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:simservers/constants/app_constants.dart';
 import 'package:simservers/providers/transactions_provider/transactions_provider.dart';
+import 'package:simservers/widgets/app_bar/app_bar.dart';
 import 'package:simservers/widgets/custom_container/custom_container.dart';
 import 'package:simservers/widgets/custom_text.dart';
+import 'package:simservers/widgets/drawer_widget/drawer_widget.dart';
 import 'package:simservers/widgets/dropdown_button/dropdown_button.dart';
 
 class TransactionsScreen extends StatefulWidget {
@@ -22,8 +24,9 @@ class _TransactionsScreenState extends State<TransactionsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBarWidget(2),
+      drawer: const DrawerWidget(),
       body: SingleChildScrollView(
         child: Container(
           color: kContainerWhite,

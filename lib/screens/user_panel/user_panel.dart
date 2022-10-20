@@ -3,7 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:simservers/constants/app_constants.dart';
 import 'package:simservers/screens/activate_cloud_service/activate_cloud_service.dart';
 import 'package:simservers/screens/register_sim_service/register_sim_service.dart';
+import 'package:simservers/widgets/app_bar/app_bar.dart';
 import 'package:simservers/widgets/custom_text.dart';
+import 'package:simservers/widgets/drawer_widget/drawer_widget.dart';
 
 class UserPanelScreen extends StatefulWidget {
   const UserPanelScreen({Key? key}) : super(key: key);
@@ -16,6 +18,8 @@ class _UserPanelScreenState extends State<UserPanelScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBarWidget(3),
+      drawer: const DrawerWidget(),
       body: SafeArea(
         child: Container(
           color: kContainerWhite,

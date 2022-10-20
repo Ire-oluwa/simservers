@@ -9,7 +9,9 @@ import 'package:simservers/screens/statistics/statistics.dart';
 import 'package:simservers/screens/transactions/transactions.dart';
 import 'package:simservers/screens/user_panel/user_panel.dart';
 import 'package:simservers/utilities/navbar_item/navbar_item.dart';
+import 'package:simservers/widgets/app_bar/app_bar.dart';
 import 'package:simservers/widgets/custom_text.dart';
+import 'package:simservers/widgets/drawer_widget/drawer_widget.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({
@@ -41,13 +43,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
   _showBottomNavigationBar(context) => Container(
         decoration: BoxDecoration(
+          color: Colors.red,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(15.0.r),
             topRight: Radius.circular(15.0.r),
           ),
-          boxShadow: const [
-            BoxShadow(color: Colors.black38, spreadRadius: 0, blurRadius: 10),
-          ],
+          // boxShadow: const [
+          //   BoxShadow(color: Colors.black38, spreadRadius: 5, blurRadius: 10),
+          // ],
         ),
         child: BottomNavigationBar(
           currentIndex: _selectedIndex,
@@ -62,100 +65,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // extendBody: true,
-      appBar: AppBar(
-        leading: Builder(
-          builder: (context) {
-            return IconButton(
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-              icon: FaIcon(
-                FontAwesomeIcons.bars,
-                color: _selectedIndex == 2 ? kBlack : kWhite,
-              ),
-            );
-          },
-        ),
-        elevation: 0.0,
-        backgroundColor: _selectedIndex == 2 ? kTransparent : kPrimaryBlue,
-        title: CustomText(
-          text: _selectedIndex == 0
-              ? ""
-              : _selectedIndex == 1
-                  ? "Statistics"
-                  : _selectedIndex == 2
-                      ? "Wallet History"
-                      : _selectedIndex == 3
-                          ? "User Panel"
-                          : _selectedIndex == 4
-                              ? "Settings"
-                              : "",
-          colour: _selectedIndex == 2 ? kBlack : kWhite,
-        ),
-        centerTitle: true,
-        actions: [
-          Icon(
-            Icons.notifications_none_outlined,
-            color: _selectedIndex == 2 ? kBlack : kWhite,
-          ),
-          SizedBox(width: 19.0.w),
-        ],
-      ),
+      extendBody: true,
       body: _screens.elementAt(_selectedIndex),
-      drawer: Drawer(
-        backgroundColor: const Color(0xFF1A2B88),
-        child: ListView(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Row(
-                children: [
-                  const CircleAvatar(),
-                  SizedBox(width: 21.6.w),
-                  const CustomText(text: "David James", colour: kWhite),
-                  SizedBox(width: 83.0.w),
-                  IconButton(
-                    icon: const Icon(Icons.close, color: kWhite),
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                  ),
-                ],
-              ),
-            ),
-            _listTile(
-                context, Icons.home, "Home", () => const DashboardScreen()),
-            _listTile(context, Icons.trending_up_outlined, "Statistics",
-                () => const StatisticsScreen()),
-            _listTile(context, Icons.rotate_left, "Transactions",
-                () => const TransactionsScreen()),
-            _listTile(context, Icons.person_outline, "User Panel",
-                () => const UserPanelScreen()),
-            _listTile(context, Icons.settings_outlined, "Settings",
-                () => const SettingsScreen()),
-            _listTile(context, Icons.person, "Admin Panel",
-                () => const StatisticsScreen()),
-            _listTile(context, Icons.help, "Help Center",
-                () => const StatisticsScreen()),
-            SizedBox(height: 184.77.h),
-            const Align(
-              alignment: Alignment.bottomLeft,
-              child: ListTile(
-                leading: Icon(
-                  Icons.output_outlined,
-                  color: kWhite,
-                ),
-                title: CustomText(text: "Log Out", colour: kWhite),
-              ),
-            ),
-          ],
-        ),
-      ),
+      drawer: const DrawerWidget(),
       bottomNavigationBar: _showBottomNavigationBar(context),
     );
   }
 }
+
+
 
 List<BottomNavigationBarItem> bottomNavBarItems() {
   return NavBarItem.getNavBarItems()
@@ -163,16 +81,3 @@ List<BottomNavigationBarItem> bottomNavBarItems() {
       .toList();
 }
 
-Widget _listTile(BuildContext context, IconData icon, String title,
-    Widget Function() screen) {
-  return ListTile(
-      leading: Icon(icon, color: kWhite),
-      title: CustomText(text: title, colour: kWhite),
-      onTap: () {
-        Navigator.pop(context);
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => screen()),
-        );
-      });
-}
