@@ -95,8 +95,22 @@ class _RegisterSimServiceState extends State<RegisterSimService> {
                               fontWeight: FontWeight.w500,
                               colour: const Color(0xFF707683),
                             ),
-                            TextButton(onPressed: (){}, child: CustomText(text: "Edit device", colour: const Color(0xFF707683), fontSize: 10.94.sp,),),
-                            TextButton(onPressed: (){}, child: CustomText(text: "Add credit", colour: const Color(0xFF707683), fontSize: 10.94.sp,),),
+                            TextButton(
+                              onPressed: () {},
+                              child: CustomText(
+                                text: "Edit device",
+                                colour: const Color(0xFF707683),
+                                fontSize: 10.94.sp,
+                              ),
+                            ),
+                            TextButton(
+                              onPressed: () {},
+                              child: CustomText(
+                                text: "Add credit",
+                                colour: const Color(0xFF707683),
+                                fontSize: 10.94.sp,
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -180,7 +194,10 @@ Widget _buildTabBar(BuildContext context, deviceNameController,
           showDialog(
             context: context,
             builder: (context) {
-              return Delete(onClick: () {},);
+              return Delete(
+                onClick: () {},
+                title: "Are you sure you want to delete this device",
+              );
             },
           );
         },
@@ -190,30 +207,3 @@ Widget _buildTabBar(BuildContext context, deviceNameController,
   );
 }
 
-// Consumer<NewDeviceData>(
-//   builder: (BuildContext context, newDeviceData, Widget? child) {
-//     return SizedBox(
-//       width: 428.0.w,
-//       height: 928.0.h,
-//       child: ListView.builder(
-//         itemBuilder: (BuildContext context, int index) {
-//           var device = newDeviceData.newDevice[index];
-//           return NewDeviceTile(
-//             device.isSelected,
-//             device.name,
-//             device.deviceId,
-//
-//             const EditDeviceButton(),
-//             const AddCreditButton(),
-//                 (value) {
-//               setState(() {
-//                 device.isSelected = value!;
-//               });
-//
-//             },
-//           );
-//         },
-//       ),
-//     );
-//   },
-// ),

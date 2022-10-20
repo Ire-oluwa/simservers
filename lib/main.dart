@@ -7,6 +7,10 @@ import 'package:simservers/models/new_device/new_device_data.dart';
 import 'package:simservers/providers/add_api_provider/add_api_provider.dart';
 import 'package:simservers/providers/device_info_provider.dart';
 import 'package:simservers/providers/transactions_provider/transactions_provider.dart';
+import 'package:simservers/screens/admin_panel/admin_panel_main.dart';
+import 'package:simservers/screens/admin_panel/admin_settings/admin_settings.dart';
+import 'package:simservers/screens/admin_panel/admin_statistics/admin_statistics.dart';
+import 'package:simservers/screens/admin_panel_manage_user_redirect/manage_user.dart';
 import 'package:simservers/screens/api_settings/api_settings.dart';
 import 'package:simservers/screens/change_password/change_password.dart';
 import 'package:simservers/screens/edit_profile/edit_profile.dart';
@@ -22,7 +26,7 @@ import 'package:simservers/screens/splash/final_splash.dart';
 import 'package:simservers/screens/splash/initial_splash.dart';
 
 import 'providers/settings_provider/settings_provider.dart';
-import 'screens/admin_panel/admin_panel.dart';
+import 'screens/admin_panel/admin_panel_manage_members/manage_members.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -77,7 +81,11 @@ class SimServers extends StatelessWidget {
             SetTransactionPin.id: (context) => const SetTransactionPin(),
             ResetApiKey.id: (context) => const ResetApiKey(),
             ApiSettings.id: (context) => const ApiSettings(),
-            AdminPanelScreen.id: (context) => const AdminPanelScreen(),
+            AdminPanel.id: (context) => const AdminPanel(),
+            ManageMembers.id: (context) => const ManageMembers(),
+            AdminStatistics.id: (context) => const AdminStatistics(),
+            AdminSettings.id: (context) => const AdminSettings(),
+            ManageUser.id: (context) => const ManageUser(),
           },
         );
       },

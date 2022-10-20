@@ -83,7 +83,14 @@ class _ApiSettingsState extends State<ApiSettings> {
                             fontWeight: FontWeight.w500,
                             colour: const Color(0xFF707683),
                           ),
-                          TextButton(onPressed: (){}, child: CustomText(text: "Edit device", colour: const Color(0xFF707683), fontSize: 10.94.sp,),),
+                          TextButton(
+                            onPressed: () {},
+                            child: CustomText(
+                              text: "Edit device",
+                              colour: const Color(0xFF707683),
+                              fontSize: 10.94.sp,
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -154,7 +161,10 @@ Widget _buildApiSettingsButtons(
             showDialog(
               context: context,
               builder: (context) {
-                return Delete(onClick: () {},);
+                return Delete(
+                  onClick: () {},
+                  title: "Are you suer you want to delete this device",
+                );
               },
             );
           },

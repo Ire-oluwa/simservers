@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:simservers/constants/app_constants.dart';
-import 'package:simservers/screens/admin_panel/admin_panel.dart';
+import 'package:simservers/screens/admin_panel/admin_panel_main.dart';
+import 'package:simservers/screens/admin_panel/admin_panel_manage_members/manage_members.dart';
 import 'package:simservers/screens/dashboard/dashboard.dart';
 import 'package:simservers/screens/help/help_and_support.dart';
 import 'package:simservers/screens/settings/settings.dart';
@@ -47,7 +48,7 @@ class DrawerWidget extends StatelessWidget {
           _listTile(context, Icons.settings_outlined, "Settings",
                   () => const SettingsScreen()),
           _listTile(context, Icons.person, "Admin Panel",
-                  () => const AdminPanelScreen()),
+                  () => const AdminPanel()),
           _listTile(context, Icons.help, "Help Center",
                   () => const HelpAndSupport()),
           SizedBox(height: 184.77.h),

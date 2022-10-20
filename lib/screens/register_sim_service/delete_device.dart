@@ -7,9 +7,10 @@ import 'package:simservers/utilities/elevated_button_style.dart';
 import 'package:simservers/widgets/custom_text.dart';
 
 class Delete extends StatefulWidget {
-  const Delete({Key? key, required this.onClick}) : super(key: key);
+  const Delete({Key? key, required this.onClick, required this.title}) : super(key: key);
   static const String id = "delete";
   final void Function() onClick;
+  final String title;
 
   @override
   State<Delete> createState() => _DeleteState();
@@ -24,7 +25,7 @@ class _DeleteState extends State<Delete> {
       height: 100.0.h,
       child: AlertDialog(
         title: CustomText(
-          text: "Are you sure you want to delete this device",
+          text: widget.title,
           colour: kBlack,
           fontSize: 11.23.sp,
         ),

@@ -304,7 +304,7 @@ Widget _buildTabBar(BuildContext context, deviceNameController,
             showDialog(
               context: context,
               builder: (context) {
-                return Delete(onClick: () {},);
+                return Delete(onClick: () {}, title: "Are you sure you want to delete this device?",);
               },
             );
           },
