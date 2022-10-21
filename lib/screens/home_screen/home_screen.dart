@@ -1,4 +1,3 @@
-import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:simservers/constants/app_constants.dart';
@@ -6,7 +5,6 @@ import 'package:simservers/widgets/app_bar/app_bar.dart';
 import 'package:simservers/widgets/build_line_chart/build_line_chart.dart';
 import 'package:simservers/widgets/custom_text.dart';
 import 'package:simservers/widgets/drawer_widget/drawer_widget.dart';
-import 'package:simservers/widgets/line_chart_title/line_chart_title.dart';
 import 'package:simservers/widgets/quick_option_button.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -20,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarWidget(0),
+      appBar: appBarWidget(context, 0),
       drawer: const DrawerWidget(),
       body: SafeArea(
         child: Container(
@@ -146,7 +144,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       height: 438.0.h,
                       width: 428.0.w,
                       decoration: BoxDecoration(
-                        color: Color(0xFFF0F4FF),
+                        color: const Color(0xFFF0F4FF),
                         // color: Colors.green,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(60.0.r),
@@ -167,7 +165,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             color: const Color(0xFFF2F2F2),
                             borderRadius: BorderRadius.circular(20.0.r),
                           ),
-                          child: BuildLineChart(),
+                          child: const BuildLineChart(),
                         ),
                       ),
                     ),

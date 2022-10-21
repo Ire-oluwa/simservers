@@ -25,7 +25,7 @@ class _TransactionsScreenState extends State<TransactionsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarWidget(2),
+      appBar: appBarWidget(context, 2),
       drawer: const DrawerWidget(),
       body: SingleChildScrollView(
         child: Container(

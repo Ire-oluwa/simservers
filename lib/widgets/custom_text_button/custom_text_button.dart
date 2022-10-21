@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:simservers/constants/app_constants.dart';
 
 class CustomTextButton extends StatelessWidget {
   const CustomTextButton({
@@ -11,7 +10,7 @@ class CustomTextButton extends StatelessWidget {
     required this.height,
     required this.width,
     this.borderColour,
-    required this.textColour,
+    required this.textColour, this.fontSize, this.borderRadius,
   }) : super(key: key);
   final String title;
   final void Function() onClick;
@@ -20,6 +19,8 @@ class CustomTextButton extends StatelessWidget {
   final Color textColour;
   final double height;
   final double width;
+  final double? fontSize;
+  final double? borderRadius;
 
   @override
   Widget build(BuildContext context) {
@@ -32,11 +33,11 @@ class CustomTextButton extends StatelessWidget {
           side: BorderSide(color: borderColour ?? Colors.transparent),
           backgroundColor: backgroundColour,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0.r),
+            borderRadius: BorderRadius.circular(borderRadius ?? 10.0.r),
           ),
         ),
         child: Center(
-          child: Text(title, style: TextStyle(color: textColour)),
+          child: Text(title, style: TextStyle(color: textColour, fontSize: fontSize)),
         ),
       ),
     );

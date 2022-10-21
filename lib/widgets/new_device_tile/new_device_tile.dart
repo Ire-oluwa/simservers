@@ -30,9 +30,9 @@ class NewDeviceTile extends StatelessWidget {
         // SizedBox(width: 6.85.w),
         CustomText(text: deviceName, colour: kBlack, fontSize: 12.62.sp),
         // SizedBox(width: 46.46.w),
-        EditDeviceButton(),
+        const EditDeviceButton(),
         // SizedBox(width: 10.0.w),
-        AddCreditButton(),
+        const AddCreditButton(),
       ],
     );
   }

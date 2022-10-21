@@ -58,7 +58,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       body: GestureDetector(
         onTap: kUnfocus,
         child: SingleChildScrollView(
-          physics: ClampingScrollPhysics(),
+          physics: const ClampingScrollPhysics(),
           child: Form(
             key: _editProfileFormKey,
             child: SizedBox(

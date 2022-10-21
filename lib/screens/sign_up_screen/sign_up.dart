@@ -17,13 +17,13 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  final _signUpFormKey = GlobalKey<FormState>();
+  // final _signUpFormKey = GlobalKey<FormState>();
   final _fullNameController = TextEditingController();
   final _emailController = TextEditingController();
   final _phoneNumberController = TextEditingController();
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
-  bool _obscurePassword = true;
+  // bool _obscurePassword = true;
   bool _isChecked = false;
 
   @override
@@ -142,11 +142,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       child: RichText(
                         text: TextSpan(
                           text: "I agree to the ",
-                          style: TextStyle(color: kBlack),
+                          style: const TextStyle(color: kBlack),
                           children: [
                             TextSpan(
                               text: "terms and conditions",
-                              style: TextStyle(color: kSecondaryBlue),
+                              style: const TextStyle(color: kSecondaryBlue),
                               recognizer: TapGestureRecognizer()..onTap = () {},
                             ),
                           ],

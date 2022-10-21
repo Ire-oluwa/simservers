@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:simservers/constants/app_constants.dart';
 import 'package:simservers/screens/admin_panel_manage_user_redirect/manage_user.dart';
 import 'package:simservers/screens/register_sim_service/delete_device.dart';
 import 'package:simservers/widgets/custom_container/custom_container.dart';
 import 'package:simservers/widgets/custom_text.dart';
 import 'package:simservers/widgets/custom_text_button/custom_text_button.dart';
-import 'package:simservers/widgets/drawer_widget/drawer_widget.dart';
 
 class ManageMembers extends StatefulWidget {
   const ManageMembers({Key? key}) : super(key: key);

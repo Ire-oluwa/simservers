@@ -112,7 +112,7 @@ class _AdminStatisticsState extends State<AdminStatistics> {
                   text: TextSpan(
                     text: "+2% ",
                     style: TextStyle(
-                        color: Color(0xFF23B371), fontSize: 12.0.sp),
+                        color: const Color(0xFF23B371), fontSize: 12.0.sp),
                     children: [
                       TextSpan(
                         text: "than last week",

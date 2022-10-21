@@ -30,7 +30,7 @@ class LineChartTitle {
               // case 7:
               //   return CustomText(text: "12 Sep", colour: const Color(0xFF83848B), fontSize: 12.0.sp);
             }
-            return CustomText(text: "");
+            return const CustomText(text: "");
           },
         ),
       ),

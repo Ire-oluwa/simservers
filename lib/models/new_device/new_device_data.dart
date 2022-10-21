@@ -42,8 +42,8 @@ class NewDeviceData extends ChangeNotifier {
     final device = NewDevice(
       deviceName,
       deviceId,
-      EditDeviceButton(),
-      AddCreditButton(),
+      const EditDeviceButton(),
+      const AddCreditButton(),
     );
     _newDevice.add(device);
     notifyListeners();

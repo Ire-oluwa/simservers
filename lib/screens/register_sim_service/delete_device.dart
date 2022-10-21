@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
 import 'package:simservers/constants/app_constants.dart';
-import 'package:simservers/models/new_device/new_device_data.dart';
 import 'package:simservers/utilities/elevated_button_style.dart';
 import 'package:simservers/widgets/custom_text.dart';
 
@@ -19,7 +17,7 @@ class Delete extends StatefulWidget {
 class _DeleteState extends State<Delete> {
   @override
   Widget build(BuildContext context) {
-    var _device = Provider.of<NewDeviceData>(context).newDevice.last;
+    // var _device = Provider.of<NewDeviceData>(context).newDevice.last;
     return SizedBox(
       width: 293.52.w,
       height: 100.0.h,

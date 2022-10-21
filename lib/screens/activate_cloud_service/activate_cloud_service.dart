@@ -11,6 +11,7 @@ import 'package:simservers/widgets/custom_text_button/custom_text_button.dart';
 
 class ActivateCloudServices extends StatefulWidget {
   const ActivateCloudServices({Key? key}) : super(key: key);
+  static const String id = "activate cloud services";
 
   @override
   State<ActivateCloudServices> createState() => _ActivateCloudServicesState();
@@ -420,7 +421,7 @@ Widget _buildBankDetailsDialog(context) {
         ),
       ),
     ),
-    actionsPadding: EdgeInsets.all(0.0),
+    actionsPadding: const EdgeInsets.all(0.0),
     actions: [
       CustomContainer(
         height: 107.0.h,

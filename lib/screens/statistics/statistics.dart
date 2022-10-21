@@ -26,7 +26,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarWidget(1),
+      appBar: appBarWidget(context, 1),
       drawer: const DrawerWidget(),
       body: SizedBox(
         child: Padding(
@@ -147,7 +147,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                       text: TextSpan(
                         text: "+2% ",
                         style: TextStyle(
-                            color: Color(0xFF23B371), fontSize: 12.0.sp),
+                            color: const Color(0xFF23B371), fontSize: 12.0.sp),
                         children: [
                           TextSpan(
                             text: "than last week",

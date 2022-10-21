@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:simservers/constants/app_constants.dart';
 import 'package:simservers/screens/home_screen/home_screen.dart';
 import 'package:simservers/screens/settings/settings.dart';
 import 'package:simservers/screens/statistics/statistics.dart';
 import 'package:simservers/screens/transactions/transactions.dart';
 import 'package:simservers/screens/user_panel/user_panel.dart';
 import 'package:simservers/utilities/navbar_item/navbar_item.dart';
-import 'package:simservers/widgets/app_bar/app_bar.dart';
-import 'package:simservers/widgets/custom_text.dart';
 import 'package:simservers/widgets/drawer_widget/drawer_widget.dart';
 
 class DashboardScreen extends StatefulWidget {
@@ -43,7 +38,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
   _showBottomNavigationBar(context) => Container(
         decoration: BoxDecoration(
-          color: Colors.red,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(15.0.r),
             topRight: Radius.circular(15.0.r),

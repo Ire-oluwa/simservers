@@ -21,9 +21,8 @@ class SettingsScreen extends StatefulWidget {
 class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBarWidget(4),
+      appBar: appBarWidget(context, 4),
       drawer: const DrawerWidget(),
       body: CustomContainer(
         colour: kContainerWhite,

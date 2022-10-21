@@ -15,7 +15,6 @@ class FinalSplashScreen extends StatefulWidget {
 class _FinalSplashScreenState extends State<FinalSplashScreen> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
         width: double.infinity,

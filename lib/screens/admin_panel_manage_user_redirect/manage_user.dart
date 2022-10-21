@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:simservers/constants/app_constants.dart';
 import 'package:simservers/widgets/custom_text.dart';
 class ManageUser extends StatelessWidget {

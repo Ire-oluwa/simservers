@@ -18,7 +18,7 @@ class _UserPanelScreenState extends State<UserPanelScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarWidget(3),
+      appBar: appBarWidget(context, 3),
       drawer: const DrawerWidget(),
       body: SafeArea(
         child: Container(
@@ -55,7 +55,9 @@ class _UserPanelScreenState extends State<UserPanelScreen> {
                   context,
                   Icons.lock,
                   "Activate SME Cloud",
-                  () {},
+                  () {
+                    Navigator.pushNamed(context, ActivateCloudServices.id);
+                  },
                 ),
               ],
             ),

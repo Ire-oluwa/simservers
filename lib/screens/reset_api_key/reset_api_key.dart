@@ -31,37 +31,40 @@ class _ResetApiKeyState extends State<ResetApiKey> {
         ),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: EdgeInsets.only(
-          left: 29.0.w,
-          right: 29.0.w,
-          top: 29.0.h,
-        ),
-        child: ListView(
-          children: [
-            _buildResetApiKeyInput(
-              context,
-              context.read<ResetApiKeyProvider>().oldKeyController,
-              context.read<ResetApiKeyProvider>().passwordController,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                CustomElevatedButton(
-                  borderRadius: 20.0.r,
-                  onClick: () {},
-                  backgroundColour: kButtonColour,
-                  height: 40.0.h,
-                  width: 113.0.w,
-                  child: CustomText(
-                    text: "Reset",
-                    colour: kWhite,
-                    fontSize: 14.0.sp,
+      body: InkWell(
+        onTap: kUnfocus,
+        child: Padding(
+          padding: EdgeInsets.only(
+            left: 29.0.w,
+            right: 29.0.w,
+            top: 29.0.h,
+          ),
+          child: ListView(
+            children: [
+              _buildResetApiKeyInput(
+                context,
+                context.read<ResetApiKeyProvider>().oldKeyController,
+                context.read<ResetApiKeyProvider>().passwordController,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  CustomElevatedButton(
+                    borderRadius: 20.0.r,
+                    onClick: () {},
+                    backgroundColour: kButtonColour,
+                    height: 40.0.h,
+                    width: 113.0.w,
+                    child: CustomText(
+                      text: "Reset",
+                      colour: kWhite,
+                      fontSize: 14.0.sp,
+                    ),
                   ),
-                ),
-              ],
-            ),
-          ],
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:simservers/constants/app_constants.dart';
 import 'package:simservers/screens/admin_panel/admin_panel_main.dart';
-import 'package:simservers/screens/admin_panel/admin_panel_manage_members/manage_members.dart';
 import 'package:simservers/screens/dashboard/dashboard.dart';
 import 'package:simservers/screens/help/help_and_support.dart';
 import 'package:simservers/screens/settings/settings.dart';
@@ -26,7 +25,7 @@ class DrawerWidget extends StatelessWidget {
               children: [
                 const CircleAvatar(),
                 SizedBox(width: 21.6.w),
-                const CustomText(text: "David James", colour: kWhite),
+                const CustomText(text: "Clark Kent", colour: kWhite),
                 SizedBox(width: 83.0.w),
                 IconButton(
                   icon: const Icon(Icons.close, color: kWhite),

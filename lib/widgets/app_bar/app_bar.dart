@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:simservers/constants/app_constants.dart';
+import 'package:simservers/screens/notifications/notifications.dart';
 import 'package:simservers/widgets/custom_text.dart';
 
-AppBar AppBarWidget(_selectedIndex)  {
+AppBar appBarWidget(context, selectedIndex)  {
   return AppBar(
     leading: Builder(
       builder: (context) {
@@ -14,32 +15,35 @@ AppBar AppBarWidget(_selectedIndex)  {
           },
           icon: FaIcon(
             FontAwesomeIcons.bars,
-            color: ( _selectedIndex == 1 || _selectedIndex == 2) ? kBlack : kWhite,
+            color: ( selectedIndex == 1 || selectedIndex == 2) ? kBlack : kWhite,
           ),
         );
       },
     ),
     elevation: 0.0,
-    backgroundColor:( _selectedIndex == 1 || _selectedIndex == 2) ? kTransparent : kPrimaryBlue,
+    backgroundColor:( selectedIndex == 1 || selectedIndex == 2) ? kTransparent : kPrimaryBlue,
     title: CustomText(
-      text: _selectedIndex == 0
+      text: selectedIndex == 0
           ? ""
-          : _selectedIndex == 1
+          : selectedIndex == 1
           ? "Statistics"
-          : _selectedIndex == 2
+          : selectedIndex == 2
           ? "Wallet History"
-          : _selectedIndex == 3
+          : selectedIndex == 3
           ? "User Panel"
-          : _selectedIndex == 4
+          : selectedIndex == 4
           ? "Settings"
           : "",
-      colour: (_selectedIndex == 1 || _selectedIndex == 2) ? kBlack : kWhite,
+      colour: (selectedIndex == 1 || selectedIndex == 2) ? kBlack : kWhite,
     ),
     centerTitle: true,
     actions: [
-      Icon(
-        Icons.notifications_none_outlined,
-        color:( _selectedIndex == 1 || _selectedIndex == 2) ? kBlack : kWhite,
+      IconButton(
+        onPressed: (){
+          Navigator.pushNamed(context, Notifications.id);
+        },
+        icon: Icon(Icons.notifications_none_outlined,
+        color:( selectedIndex == 1 || selectedIndex == 2) ? kBlack : kWhite,)
       ),
       SizedBox(width: 19.0.w),
     ],
