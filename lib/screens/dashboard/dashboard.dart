@@ -22,9 +22,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   final List<Widget> _screens = [
     const HomeScreen(),
-    const StatisticsScreen(),
+    // const StatisticsScreen(),
     const TransactionsScreen(),
-    const UserPanelScreen(),
+    // const UserPanelScreen(),
     const SettingsScreen(),
   ];
 
@@ -47,12 +47,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
           // ],
         ),
         child: BottomNavigationBar(
+          selectedFontSize: 18.0.sp,
           currentIndex: _selectedIndex,
           items: bottomNavBarItems(),
           onTap: _onItemTapped,
           unselectedItemColor: const Color(0xFF83848B),
           selectedItemColor: const Color(0xFF100D40),
-          type: BottomNavigationBarType.shifting,
+          type: BottomNavigationBarType.fixed,
         ),
       );
 

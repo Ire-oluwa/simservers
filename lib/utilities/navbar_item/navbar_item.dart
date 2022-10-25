@@ -15,24 +15,24 @@ class NavBarItem {
             FontAwesomeIcons.houseChimneyWindow,
             size: 20.0.sp,
           )),
-      NavBarItem(
-          "Statistics",
-          FaIcon(
-            FontAwesomeIcons.arrowTrendUp,
-            size: 20.0.sp,
-          )),
+      // NavBarItem(
+      //     "Statistics",
+      //     FaIcon(
+      //       FontAwesomeIcons.arrowTrendUp,
+      //       size: 20.0.sp,
+      //     )),
       NavBarItem(
           "Transactions",
           FaIcon(
             FontAwesomeIcons.clockRotateLeft,
             size: 20.0.sp,
           )),
-      NavBarItem(
-          "User Panel",
-          FaIcon(
-            FontAwesomeIcons.user,
-            size: 20.0.sp,
-          )),
+      // NavBarItem(
+      //     "User Panel",
+      //     FaIcon(
+      //       FontAwesomeIcons.user,
+      //       size: 20.0.sp,
+      //     )),
       NavBarItem(
           "Settings",
           FaIcon(

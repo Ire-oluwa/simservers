@@ -48,7 +48,9 @@ class HelpAndSupport extends StatelessWidget {
               Icons.arrow_forward_ios,
               color: Color(0xFF82909D),
             ),
-            onTap: () {},
+            onTap: () {
+
+            },
           ),
           Divider(
             color: const Color(0xFFE7E8EA),

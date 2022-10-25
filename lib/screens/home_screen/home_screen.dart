@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:simservers/constants/app_constants.dart';
+import 'package:simservers/screens/transactions/transactions.dart';
 import 'package:simservers/widgets/app_bar/app_bar.dart';
 import 'package:simservers/widgets/build_line_chart/build_line_chart.dart';
+import 'package:simservers/widgets/custom_container/custom_container.dart';
 import 'package:simservers/widgets/custom_text.dart';
 import 'package:simservers/widgets/drawer_widget/drawer_widget.dart';
 import 'package:simservers/widgets/quick_option_button.dart';
@@ -87,7 +90,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: const [
-                            CustomText(text: "₦346,300", colour: kWhite),
+                            //₦
+                            CustomText(text: "N346,300", colour: kWhite),
                             CustomText(text: "500GB", colour: kWhite),
                             CustomText(text: "100GB", colour: kWhite),
                           ],
@@ -138,40 +142,114 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
                 SizedBox(height: 11.77.h),
-                Stack(
-                  children: [
-                    Container(
-                      height: 438.0.h,
-                      width: 428.0.w,
+                Container(
+                  height: 680.0.h,
+                  // height: double.infinity,
+                  width: 428.0.w,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFF0F4FF),
+                    // color: Colors.green,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(60.0.r),
+                      topRight: Radius.circular(60.0.r),
+                    ),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                      top: 29.0.h,
+                      left: 21.0.w,
+                      right: 21.0.w,
+                    ),
+                    child: Container(
+                      height: 400.0.h,
                       decoration: BoxDecoration(
-                        color: const Color(0xFFF0F4FF),
-                        // color: Colors.green,
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(60.0.r),
-                          topRight: Radius.circular(60.0.r),
-                        ),
+                        // color: Colors.blue,
+                        color: const Color(0xFFF2F2F2),
+                        borderRadius: BorderRadius.circular(20.0.r),
                       ),
-                      child: Padding(
-                        padding: EdgeInsets.only(
-                          top: 29.0.h,
-                          left: 21.0.w,
-                          right: 21.0.w,
-                        ),
-                        child: Container(
-                          width: 386.0.w,
-                          height: 317.0.h,
-                          decoration: BoxDecoration(
-                            // color: Colors.blue,
-                            color: const Color(0xFFF2F2F2),
-                            borderRadius: BorderRadius.circular(20.0.r),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              CustomText(
+                                text: "Recent Transactions",
+                                fontSize: 12.0.sp,
+                                colour: const Color(0xFF333333),
+                              ),
+                              TextButton(
+                                  onPressed: () {
+                                    Navigator.pushNamed(
+                                      context,
+                                      TransactionsScreen.id,
+                                    );
+                                  },
+                                  child: CustomText(
+                                    text: "See All",
+                                    colour: const Color(0xFF427A95),
+                                    fontSize: 12.0.sp,
+                                  ))
+                            ],
                           ),
-                          child: const BuildLineChart(),
-                        ),
+                          ListView.builder(
+                            physics: const NeverScrollableScrollPhysics(),
+                            shrinkWrap: true,
+                            itemCount: 5,
+                            itemBuilder: (context, index) {
+                              return ListTile(
+                                leading: SizedBox(
+                                  height: 32.0.h,
+                                  width: 35.99.w,
+                                  child: CustomContainer(
+                                    borderRadius: BorderRadius.circular(10.0.r),
+                                    colour: const Color(0xFF48A2CE),
+                                    height: 32.0.h,
+                                    width: 35.99.w,
+                                    containerChild: Center(
+                                      child: FaIcon(
+                                        FontAwesomeIcons.telegram,
+                                        size: 18.0.sp,
+                                        color: kWhite,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                title: CustomText(
+                                  text: "Voldermort",
+                                  fontSize: 15.0.sp,
+                                  colour: const Color(0xFF333333),
+                                  fontWeight: FontWeight.w500,
+                                ),
+                                subtitle: CustomText(
+                                  text: "Data Transfer",
+                                  fontSize: 12.0.sp,
+                                  colour: const Color(0xFF333333),
+                                ),
+                                trailing: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    CustomText(
+                                      text: "10GB",
+                                      fontSize: 12.0.sp,
+                                      colour: const Color(0xFF333333),
+                                    ),
+                                    CustomText(
+                                      text:
+                                          "${DateTime.now().day}/${DateTime.now().month}/${DateTime.now().year}",
+                                      fontSize: 12.0.sp,
+                                      colour: const Color(0xFF333333),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
+                          ),
+                        ],
                       ),
                     ),
-                  ],
+                  ),
                 ),
-                SizedBox(height: 27.0.h),
+                // SizedBox(height: 27.0.h),
               ],
             ),
           ),

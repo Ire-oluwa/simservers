@@ -11,6 +11,7 @@ import 'package:simservers/widgets/dropdown_button/dropdown_button.dart';
 
 class TransactionsScreen extends StatefulWidget {
   const TransactionsScreen({Key? key}) : super(key: key);
+  static const String id = "transactions screen";
 
   @override
   State<TransactionsScreen> createState() => _TransactionsScreenState();

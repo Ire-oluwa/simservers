@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:simservers/constants/app_constants.dart';
 
 class CustomContainer extends StatelessWidget {
@@ -16,6 +17,8 @@ class CustomContainer extends StatelessWidget {
     this.padding,
     required this.containerChild,
     this.colour,
+    this.borderWidth,
+    this.borderColour,
   }) : super(key: key);
   final double height;
   final double width;
@@ -29,6 +32,8 @@ class CustomContainer extends StatelessWidget {
   final double? blurRadius;
   final EdgeInsetsGeometry? padding;
   final Widget containerChild;
+  final double? borderWidth;
+  final Color? borderColour;
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +42,8 @@ class CustomContainer extends StatelessWidget {
       height: height,
       width: width,
       decoration: BoxDecoration(
+        border: Border.all(
+            width: borderWidth ?? 1.0.w, color: borderColour ?? kWhite),
         color: colour,
         gradient: gradient,
         borderRadius: borderRadius,

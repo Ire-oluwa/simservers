@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:simservers/providers/add_api_provider/add_api_provider.dart';
+import 'package:simservers/providers/choose_plan_provider/choose_plan_provider.dart';
 import 'package:simservers/providers/device_info_provider.dart';
 import 'package:simservers/providers/transactions_provider/transactions_provider.dart';
 import 'package:simservers/screens/activate_cloud_service/activate_cloud_service.dart';
@@ -12,6 +13,7 @@ import 'package:simservers/screens/admin_panel/admin_statistics/admin_statistics
 import 'package:simservers/screens/admin_panel_manage_user_redirect/manage_user.dart';
 import 'package:simservers/screens/api_settings/api_settings.dart';
 import 'package:simservers/screens/change_password/change_password.dart';
+import 'package:simservers/screens/choose_plan/choose_plan.dart';
 import 'package:simservers/screens/edit_profile/edit_profile.dart';
 import 'package:simservers/screens/forgot_password/forgot_password.dart';
 import 'package:simservers/screens/landing/landing_page.dart';
@@ -25,6 +27,7 @@ import 'package:simservers/screens/sign_in/sign_in.dart';
 import 'package:simservers/screens/sign_up_screen/sign_up.dart';
 import 'package:simservers/screens/splash/final_splash.dart';
 import 'package:simservers/screens/splash/initial_splash.dart';
+import 'package:simservers/screens/transactions/transactions.dart';
 
 import 'providers/settings_provider/settings_provider.dart';
 import 'screens/admin_panel/admin_panel_manage_members/manage_members.dart';
@@ -41,6 +44,7 @@ void main() {
         ChangeNotifierProvider(create: (_) => ResetApiKeyProvider()),
         ChangeNotifierProvider(create: (_) => AddApiProvider()),
         ChangeNotifierProvider(create: (_) => TransactionProvider()),
+        ChangeNotifierProvider(create: (_) => ChoosePlanProvider(),),
       ],
       child: const SimServers(),
     ),
@@ -88,6 +92,8 @@ class SimServers extends StatelessWidget {
             Notifications.id: (context) => const Notifications(),
             NotificationsView.id: (context) => const NotificationsView(),
             ActivateCloudServices.id: (context) => const ActivateCloudServices(),
+            TransactionsScreen.id: (context) => const TransactionsScreen(),
+            ChoosePlan.id: (context) => const ChoosePlan(),
           },
         );
       },

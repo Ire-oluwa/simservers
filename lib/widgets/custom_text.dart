@@ -12,6 +12,7 @@ class CustomText extends StatelessWidget {
     this.fontStyle,
     this.fontFamily,
     this.textOverflow,
+    this.softWrap,
   }) : super(key: key);
   final String text;
   final Color? colour;
@@ -21,11 +22,13 @@ class CustomText extends StatelessWidget {
   final FontStyle? fontStyle;
   final String? fontFamily;
   final TextOverflow? textOverflow;
+  final bool? softWrap;
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
+      softWrap: softWrap,
       overflow: TextOverflow.clip,
       textAlign: textAlign,
       style: GoogleFonts.poppins(

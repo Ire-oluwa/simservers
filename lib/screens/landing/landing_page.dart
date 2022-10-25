@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:simservers/constants/app_constants.dart';
+import 'package:simservers/screens/choose_plan/choose_plan.dart';
 import 'package:simservers/screens/sign_in/sign_in.dart';
 import 'package:simservers/screens/sign_up_screen/sign_up.dart';
 import 'package:simservers/utilities/elevated_button_style.dart';
@@ -64,13 +65,11 @@ class LandingPage extends StatelessWidget {
               top: 700.0.h,
             ),
             child: Row(
-              // mainAxisAlignment: MainAxisAlignment.center,
-              // alignment: WrapAlignment.center,
-              // crossAxisAlignment: WrapCrossAlignment.center,
               children: [
                 CustomElevatedButton(
                   onClick: () {
-                    Navigator.of(context).pushNamed(SignUpScreen.id);
+                    // Navigator.of(context).pushNamed(SignUpScreen.id);
+                    Navigator.pushNamed(context, ChoosePlan.id);
                   },
                   borderSideColour: Colors.transparent,
                   backgroundColour: kButtonColour,
