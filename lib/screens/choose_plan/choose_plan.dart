@@ -112,7 +112,7 @@ class _ChoosePlanState extends State<ChoosePlan> {
                               containerChild: Center(
                                 child: CustomText(
                                   text: "Monthly",
-                                  colour: isMonthly ? kWhite : kBlack,
+                                  colour: context.read<ChoosePlanProvider>().isMonthly ? kWhite : kBlack,
                                 ),
                               ),
                             ),
@@ -128,11 +128,11 @@ class _ChoosePlanState extends State<ChoosePlan> {
                               height: 40.0.h,
                               borderRadius: BorderRadius.only(
                                   topRight: Radius.circular(10.0.r),
-                                  bottomRight: Radius.circular(10.0.r)),
+                                  bottomRight: Radius.circular(10.0.r),),
                               containerChild: Center(
                                 child: CustomText(
                                   text: "Yearly",
-                                  colour: isYearly ? kWhite : kBlack,
+                                  colour: context.read<ChoosePlanProvider>().isYearly ? kWhite : kBlack,
                                 ),
                               ),
                             ),
