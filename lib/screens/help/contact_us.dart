@@ -59,7 +59,7 @@ var contacts = ListView(
     const Divider(color: Color(0xFFB7B7BD)),
     Row(
       children: [
-        SvgPicture.asset("assets/contact_us/whatsapp.svg"),
+        SvgPicture.asset("assets/contact_us/facebook.svg"),
         SizedBox(width: 30.0.w),
         Padding(
           padding: EdgeInsets.only(top: 13.0.h ,bottom: 13.0.h),
