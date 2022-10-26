@@ -19,9 +19,13 @@ class StatisticsScreen extends StatefulWidget {
 
 class _StatisticsScreenState extends State<StatisticsScreen> {
   late String currenciesDropdownValue =
-      context.read<TransactionProvider>().currencies[1];
+  context
+      .read<TransactionProvider>()
+      .currencies[1];
   late String periodDropdownValue =
-      context.read<TransactionProvider>().period[0];
+  context
+      .read<TransactionProvider>()
+      .period[0];
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +58,8 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                         items: context
                             .read<TransactionProvider>()
                             .currencies
-                            .map((e) => DropdownMenuItem<String>(
+                            .map((e) =>
+                            DropdownMenuItem<String>(
                                 value: e,
                                 child: Center(
                                   child: CustomText(
@@ -81,7 +86,8 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                             .read<TransactionProvider>()
                             .period
                             .map(
-                              (e) => DropdownMenuItem<String>(
+                              (e) =>
+                              DropdownMenuItem<String>(
                                 value: e,
                                 child: Center(
                                   child: CustomText(
@@ -91,7 +97,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                                   ),
                                 ),
                               ),
-                            )
+                        )
                             .toList(),
                         onDropdownSelected: (value) {
                           setState(() {
@@ -117,8 +123,32 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                   height: 317.0.h,
                   width: 386.0.w,
                   containerChild: Stack(
-                    children: const [
-                      BuildLineChart(),
+                    children: [
+                      const BuildLineChart(),
+                      Positioned(
+                        top: 14.0.h,
+                        left: 14.0.w,
+                        child: SizedBox(
+                          height: 25.0.h,
+                          width: 98.0.w,
+                          child: CustomText(
+                            text: periodDropdownValue,
+                            fontSize: 16.0.sp,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 40.0.h,
+                        left: 14.0.w,
+                        child: SizedBox(
+                            height: 17.0.h,
+                            width: 73.0.w,
+                            child: CustomText(text: "+2.36 (2%)",
+                              colour: const Color(0xFF23B371),
+                              fontSize: 13.0.sp,),
+                        ),
+                      ),
                     ],
                   ),
                 ),

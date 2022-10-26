@@ -16,7 +16,7 @@ class ChoosePlan extends StatefulWidget {
   static const _icon = Icon(
     Icons.check,
     color: kPrimaryGreen,
-    size: 13.0,
+    size: 16.0,
   );
 
   @override
@@ -235,7 +235,7 @@ class _ChoosePlanState extends State<ChoosePlan> {
                                               "Number of devices (30)",
                                               context),
                                       _buildMonthlyPlan(SizedBox(width: 25.0.w),
-                                          "Device setup fee (2000)", context),
+                                          "Device setup fee (N2000)", context),
                                       _buildMonthlyPlan(SizedBox(width: 25.0.w),
                                           "CG set up fee (N10000)", context),
                                     ],
@@ -287,7 +287,7 @@ class _ChoosePlanState extends State<ChoosePlan> {
                                               "Number of devices (30)",
                                               context),
                                       _buildMonthlyPlan(SizedBox(width: 25.0.w),
-                                          "Device setup fee (2000)", context),
+                                          "Device setup fee (N2000)", context),
                                       _buildMonthlyPlan(SizedBox(width: 25.0.w),
                                           "CG set up fee (N10000)", context),
                                     ],
@@ -402,10 +402,10 @@ Widget _buildMonthlyPlan(icon, text, context) {
           SizedBox(width: 10.0.w),
           SizedBox(
             height: 19.0.h,
-            width: 140.0.w,
+            width: 160.0.w,
             child: CustomText(
               text: text,
-              fontSize: 12.0.sp,
+              fontSize: 14.0.sp,
             ),
           ),
         ],

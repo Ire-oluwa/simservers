@@ -4,10 +4,10 @@ class TransactionProvider extends ChangeNotifier {
   final List _currencies = ["Mtn", "Naira", "Airtel", "Glo"];
   final List _period = [
     "Today",
-    "last week",
+    "Last week",
     "month",
-    "last 30 days",
-    "last 60 days",
+    "Last 30 days",
+    "Last 60 days",
   ];
 
   List get currencies {
