@@ -74,6 +74,7 @@ flutter:
     - assets/landing_page/
     - assets/authentication/
     - assets/dashboard/
+    - assets/contact_us/
 
 
   # To add custom fonts to your application, add a fonts section here,

@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:simservers/providers/add_api_provider/add_api_provider.dart';
 import 'package:simservers/providers/choose_plan_provider/choose_plan_provider.dart';
 import 'package:simservers/providers/device_info_provider.dart';
+import 'package:simservers/providers/faq_provider/faq_provider.dart';
 import 'package:simservers/providers/transactions_provider/transactions_provider.dart';
 import 'package:simservers/screens/activate_cloud_service/activate_cloud_service.dart';
 import 'package:simservers/screens/admin_panel/admin_panel_main.dart';
@@ -16,6 +17,8 @@ import 'package:simservers/screens/change_password/change_password.dart';
 import 'package:simservers/screens/choose_plan/choose_plan.dart';
 import 'package:simservers/screens/edit_profile/edit_profile.dart';
 import 'package:simservers/screens/forgot_password/forgot_password.dart';
+import 'package:simservers/screens/help/contact_us.dart';
+import 'package:simservers/screens/help/faq.dart';
 import 'package:simservers/screens/landing/landing_page.dart';
 import 'package:simservers/screens/notifications/notifications.dart';
 import 'package:simservers/screens/notifications_view/notifications_view.dart';
@@ -44,7 +47,8 @@ void main() {
         ChangeNotifierProvider(create: (_) => ResetApiKeyProvider()),
         ChangeNotifierProvider(create: (_) => AddApiProvider()),
         ChangeNotifierProvider(create: (_) => TransactionProvider()),
-        ChangeNotifierProvider(create: (_) => ChoosePlanProvider(),),
+        ChangeNotifierProvider(create: (_) => ChoosePlanProvider()),
+        ChangeNotifierProvider(create: (_) => FAQProvider()),
       ],
       child: const SimServers(),
     ),
@@ -91,9 +95,12 @@ class SimServers extends StatelessWidget {
             ManageUser.id: (context) => const ManageUser(),
             Notifications.id: (context) => const Notifications(),
             NotificationsView.id: (context) => const NotificationsView(),
-            ActivateCloudServices.id: (context) => const ActivateCloudServices(),
+            ActivateCloudServices.id: (context) =>
+                const ActivateCloudServices(),
             TransactionsScreen.id: (context) => const TransactionsScreen(),
             ChoosePlan.id: (context) => const ChoosePlan(),
+            FAQ.id: (context) => const FAQ(),
+            ContactUs.id: (context) => const ContactUs(),
           },
         );
       },

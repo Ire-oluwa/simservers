@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:simservers/constants/app_constants.dart';
+import 'package:simservers/screens/help/contact_us.dart';
+import 'package:simservers/screens/help/faq.dart';
 import 'package:simservers/widgets/custom_text.dart';
 import 'package:simservers/widgets/drawer_widget/drawer_widget.dart';
 
@@ -37,7 +39,6 @@ class HelpAndSupport extends StatelessWidget {
       drawer: const DrawerWidget(),
       body: ListView(
         children: [
-          Divider(color: kBlack, thickness: 1.0.h, indent: 0.0, endIndent: 0.0),
           ListTile(
             leading: CustomText(
               text: "FAQ",
@@ -49,7 +50,7 @@ class HelpAndSupport extends StatelessWidget {
               color: Color(0xFF82909D),
             ),
             onTap: () {
-
+              Navigator.pushNamed(context, FAQ.id);
             },
           ),
           Divider(
@@ -68,7 +69,9 @@ class HelpAndSupport extends StatelessWidget {
               Icons.arrow_forward_ios,
               color: Color(0xFF82909D),
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, ContactUs.id);
+            },
           ),
           Divider(
             color: const Color(0xFFE7E8EA),
