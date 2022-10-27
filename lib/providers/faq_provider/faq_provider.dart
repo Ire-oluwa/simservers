@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class FAQProvider extends ChangeNotifier{
+class FAQProvider extends ChangeNotifier {
   late bool isQuestionClicked = false;
 
-  showAnswer(){
-    isQuestionClicked = true;
-    
+  showAnswer() {
+    isQuestionClicked = !isQuestionClicked;
+    notifyListeners();
   }
 }

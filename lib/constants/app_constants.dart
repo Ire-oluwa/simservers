@@ -16,7 +16,7 @@ const kPasswordInputType = TextInputType.visiblePassword;
 const kNameInputType = TextInputType.text;
 const kNextInputAction = TextInputAction.next;
 const kLabelTextColour = Color(0xFF575757);
-
+const kUnselectedQuestion = Color(0xFF333333);
 
 VoidCallback kUnfocus = () {
   FocusManager.instance.primaryFocus?.unfocus();
