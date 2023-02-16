@@ -18,7 +18,7 @@ class AdminStatistics extends StatefulWidget {
 
 class _AdminStatisticsState extends State<AdminStatistics> {
   late String periodDropdownValue =
-  context.read<TransactionProvider>().period[0];
+      context.read<TransactionProvider>().period[0];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,35 +45,39 @@ class _AdminStatisticsState extends State<AdminStatistics> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Divider(
-            thickness: 1.0.h,
-            color: kBlack,
-            indent: 0.0,
-            endIndent: 0.0,
-          ),
-          Dropdownbutton(
-            dropdownValue: periodDropdownValue,
-            items: context
-                .read<TransactionProvider>()
-                .period
-                .map(
-                  (e) => DropdownMenuItem<String>(
-                value: e,
-                child: Center(
-                  child: CustomText(
-                    text: e,
-                    fontSize: 12.0.sp,
-                    colour: const Color(0xFF333333),
-                  ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              SizedBox(
+                height: 38.0.h,
+                width: 78.0.w,
+                child: Dropdownbutton(
+                  dropdownValue: periodDropdownValue,
+                  items: context
+                      .read<TransactionProvider>()
+                      .period
+                      .map(
+                        (e) => DropdownMenuItem<String>(
+                          value: e,
+                          child: Center(
+                            child: CustomText(
+                              text: e,
+                              fontSize: 12.0.sp,
+                              colour: const Color(0xFF333333),
+                            ),
+                          ),
+                        ),
+                      )
+                      .toList(),
+                  onDropdownSelected: (value) {
+                    setState(() {
+                      periodDropdownValue = value!;
+                    });
+                  },
                 ),
               ),
-            )
-                .toList(),
-            onDropdownSelected: (value) {
-              setState(() {
-                periodDropdownValue = value!;
-              });
-            },
+              SizedBox(width: 24.0.w),
+            ],
           ),
           SizedBox(height: 24.0.h),
           Center(
@@ -89,42 +93,45 @@ class _AdminStatisticsState extends State<AdminStatistics> {
             ),
           ),
           SizedBox(height: 37.0.h),
-          CustomContainer(
-            height: 113.0.h,
-            width: 179.0.w,
-            colour: const Color(0xFFF0F4FF),
-            padding: EdgeInsets.only(left: 16.0.w),
-            containerChild: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                CustomText(
-                  text: "Total Income",
-                  fontSize: 12.0.sp,
-                  colour: const Color(0xFF5B5B66),
-                ),
-                CustomText(
-                    text: "N400,345",
-                    fontSize: 18.0.sp,
-                    colour: const Color(0xFF0C0C0C),
-                    fontWeight: FontWeight.w600),
-                RichText(
-                  text: TextSpan(
-                    text: "+2% ",
-                    style: TextStyle(
-                        color: const Color(0xFF23B371), fontSize: 12.0.sp),
-                    children: [
-                      TextSpan(
-                        text: "than last week",
-                        style: TextStyle(
-                            color: const Color(0xFF434244),
-                            fontSize: 12.0.sp),
-                      ),
-                    ],
+          Padding(
+            padding: EdgeInsets.only(left: 18.0.w),
+            child: CustomContainer(
+              height: 113.0.h,
+              width: 179.0.w,
+              colour: const Color(0xFFF0F4FF),
+              padding: EdgeInsets.only(left: 16.0.w),
+              containerChild: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  CustomText(
+                    text: "Total Income",
+                    fontSize: 12.0.sp,
+                    colour: const Color(0xFF5B5B66),
                   ),
-                ),
-                // CustomText(text: "+2% than last week", fontSize: 12.0.sp, colour: const Color(0xFF0C0C0C), fontWeight: FontWeight.w600),
-              ],
+                  CustomText(
+                      text: "N400,345",
+                      fontSize: 18.0.sp,
+                      colour: const Color(0xFF0C0C0C),
+                      fontWeight: FontWeight.w600),
+                  RichText(
+                    text: TextSpan(
+                      text: "+2% ",
+                      style: TextStyle(
+                          color: const Color(0xFF23B371), fontSize: 12.0.sp),
+                      children: [
+                        TextSpan(
+                          text: "than last week",
+                          style: TextStyle(
+                              color: const Color(0xFF434244),
+                              fontSize: 12.0.sp),
+                        ),
+                      ],
+                    ),
+                  ),
+                  // CustomText(text: "+2% than last week", fontSize: 12.0.sp, colour: const Color(0xFF0C0C0C), fontWeight: FontWeight.w600),
+                ],
+              ),
             ),
           ),
         ],

@@ -45,12 +45,6 @@ class AdminPanel extends StatelessWidget {
         child: ListView(
           shrinkWrap: true,
           children: [
-            Divider(
-              color: kBlack,
-              thickness: 1.0.h,
-              indent: 0.0,
-              endIndent: 0.0,
-            ),
             SizedBox(height: 16.0.h),
             CustomText(
               text: "Account",

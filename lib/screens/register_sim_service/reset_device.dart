@@ -33,6 +33,7 @@ class _ResetState extends State<Reset> {
                   CustomElevatedButton(
                     onClick: () {},
                     backgroundColour: kPrimaryBlue,
+                    borderSideColour: kTransparent,
                     height: 18.0.h,
                     width: 85.0.w,
                     borderRadius: 5.0.r,

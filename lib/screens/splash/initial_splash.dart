@@ -18,6 +18,7 @@ class InitialSplashScreen extends StatefulWidget {
 
 class _InitialSplashScreenState extends State<InitialSplashScreen> {
   String _deviceId = "";
+  int _duration = 2;
 
   @override
   void initState() {

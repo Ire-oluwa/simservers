@@ -51,6 +51,7 @@ class _ResetApiKeyState extends State<ResetApiKey> {
                 children: [
                   CustomElevatedButton(
                     borderRadius: 20.0.r,
+                    borderSideColour: kTransparent,
                     onClick: () {},
                     backgroundColour: kButtonColour,
                     height: 40.0.h,

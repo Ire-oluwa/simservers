@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:simservers/constants/app_constants.dart';
+import 'package:simservers/screens/activate_cloud_service/activate_cloud_service.dart';
+import 'package:simservers/screens/register_sim_service/register_sim_service.dart';
 import 'package:simservers/screens/transactions/transactions.dart';
+import 'package:simservers/widgets/add_api/add_api.dart';
 import 'package:simservers/widgets/app_bar/app_bar.dart';
-import 'package:simservers/widgets/build_line_chart/build_line_chart.dart';
 import 'package:simservers/widgets/custom_container/custom_container.dart';
 import 'package:simservers/widgets/custom_text.dart';
 import 'package:simservers/widgets/drawer_widget/drawer_widget.dart';
@@ -117,27 +119,47 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     QuickOption(
-                      onClick: () {},
                       backgroundColour: kSubmissionButtonColour,
                       iconData: Icons.add,
                       firstText: "Add",
                       secondText: "New API",
+                      onClick: () {
+                        showDialog(
+                          context: context,
+                          builder: (context) {
+                            return Center(
+                              child: AlertDialog(
+                                content: CustomContainer(
+                                  borderRadius: BorderRadius.circular(20.0.r),
+                                  containerChild: AddApi(),
+                                  height: 447.0.h,
+                                  width: 392.0.w,
+                                ),
+                              ),
+                            );
+                          },
+                        );
+                      },
                     ),
                     SizedBox(width: 10.77.w),
                     QuickOption(
-                      onClick: () {},
                       backgroundColour: kSubmissionButtonColour,
                       iconData: Icons.open_in_new_outlined,
                       firstText: "Register",
                       secondText: "Sim Services",
+                      onClick: () {
+                        Navigator.pushNamed(context, RegisterSimService.id);
+                      },
                     ),
                     SizedBox(width: 10.77.w),
                     QuickOption(
-                      onClick: () {},
                       backgroundColour: kSubmissionButtonColour,
                       iconData: Icons.open_in_new_outlined,
                       firstText: "Activate",
                       secondText: "Cloud Services",
+                      onClick: () {
+                        Navigator.pushNamed(context, ActivateCloudServices.id);
+                      },
                     ),
                   ],
                 ),

@@ -19,13 +19,9 @@ class StatisticsScreen extends StatefulWidget {
 
 class _StatisticsScreenState extends State<StatisticsScreen> {
   late String currenciesDropdownValue =
-  context
-      .read<TransactionProvider>()
-      .currencies[1];
+      context.read<TransactionProvider>().currencies[1];
   late String periodDropdownValue =
-  context
-      .read<TransactionProvider>()
-      .period[0];
+      context.read<TransactionProvider>().period[0];
 
   @override
   Widget build(BuildContext context) {
@@ -38,12 +34,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Divider(
-                thickness: 1.0.h,
-                color: kBlack,
-                indent: 0.0,
-                endIndent: 0.0,
-              ),
+              // Divider(thickness: 1.0.h, color: kBlack, indent: 0.0, endIndent: 0.0),
               SizedBox(height: 26.75.h),
               Padding(
                 padding: EdgeInsets.only(right: 19.0.w),
@@ -58,8 +49,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                         items: context
                             .read<TransactionProvider>()
                             .currencies
-                            .map((e) =>
-                            DropdownMenuItem<String>(
+                            .map((e) => DropdownMenuItem<String>(
                                 value: e,
                                 child: Center(
                                   child: CustomText(
@@ -86,8 +76,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                             .read<TransactionProvider>()
                             .period
                             .map(
-                              (e) =>
-                              DropdownMenuItem<String>(
+                              (e) => DropdownMenuItem<String>(
                                 value: e,
                                 child: Center(
                                   child: CustomText(
@@ -97,7 +86,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                                   ),
                                 ),
                               ),
-                        )
+                            )
                             .toList(),
                         onDropdownSelected: (value) {
                           setState(() {
@@ -142,11 +131,13 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                         top: 40.0.h,
                         left: 14.0.w,
                         child: SizedBox(
-                            height: 17.0.h,
-                            width: 73.0.w,
-                            child: CustomText(text: "+2.36 (2%)",
-                              colour: const Color(0xFF23B371),
-                              fontSize: 13.0.sp,),
+                          height: 17.0.h,
+                          width: 73.0.w,
+                          child: CustomText(
+                            text: "+2.36 (2%)",
+                            colour: const Color(0xFF23B371),
+                            fontSize: 13.0.sp,
+                          ),
                         ),
                       ),
                     ],

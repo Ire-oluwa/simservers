@@ -23,7 +23,15 @@ class DrawerWidget extends StatelessWidget {
             padding: const EdgeInsets.all(12.0),
             child: Row(
               children: [
-                const CircleAvatar(),
+                CircleAvatar(
+                  radius: 28.0.sp,
+                  //should be the first letters of first name and last name
+                  child: CustomText(
+                    text: "CK",
+                    fontSize: 18.0.sp,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
                 SizedBox(width: 21.6.w),
                 const CustomText(text: "Clark Kent", colour: kWhite),
                 SizedBox(width: 83.0.w),
@@ -36,20 +44,19 @@ class DrawerWidget extends StatelessWidget {
               ],
             ),
           ),
-          _listTile(
-              context, Icons.home, "Home", () => const DashboardScreen()),
+          _listTile(context, Icons.home, "Home", () => const DashboardScreen()),
           _listTile(context, Icons.trending_up_outlined, "Statistics",
-                  () => const StatisticsScreen()),
+              () => const StatisticsScreen()),
           _listTile(context, Icons.rotate_left, "Transactions",
-                  () => const TransactionsScreen()),
+              () => const TransactionsScreen()),
           _listTile(context, Icons.person_outline, "User Panel",
-                  () => const UserPanelScreen()),
+              () => const UserPanelScreen()),
           _listTile(context, Icons.settings_outlined, "Settings",
-                  () => const SettingsScreen()),
-          _listTile(context, Icons.person, "Admin Panel",
-                  () => const AdminPanel()),
-          _listTile(context, Icons.help, "Help Center",
-                  () => const HelpAndSupport()),
+              () => const SettingsScreen()),
+          _listTile(
+              context, Icons.person, "Admin Panel", () => const AdminPanel()),
+          _listTile(
+              context, Icons.help, "Help Center", () => const HelpAndSupport()),
           SizedBox(height: 184.77.h),
           const Align(
             alignment: Alignment.bottomLeft,

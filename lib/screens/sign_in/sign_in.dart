@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:simservers/constants/app_constants.dart';
 import 'package:simservers/screens/forgot_password/forgot_password.dart';
+import 'package:simservers/screens/sign_up_screen/sign_up.dart';
 import 'package:simservers/utilities/custom_text_field/custom_text_form_field.dart';
 import 'package:simservers/widgets/submission_button.dart';
 
@@ -132,7 +133,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     height: 47.0.h,
                     child: SubmissionButton(
                       fillColour: kSubmissionButtonColour,
-                      title: 'SIgn In',
+                      title: 'Sign In',
                       onClick: () {},
                       textColour: kWhite,
                     ),
@@ -146,7 +147,9 @@ class _SignInScreenState extends State<SignInScreen> {
                         style: GoogleFonts.poppins(fontSize: 14.0.sp),
                       ),
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.pushNamed(context, SignUpScreen.id);
+                        },
                         child: Text(
                           "Sign Up",
                           style: GoogleFonts.poppins(

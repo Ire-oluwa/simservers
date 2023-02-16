@@ -34,7 +34,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     super.initState();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -114,38 +113,40 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      if(readOnly)
-                      CustomElevatedButton(
-                        onClick: () {
-                          setState(() {
-                            readOnly = !readOnly;
-                            enabled = !enabled;
-                          });
-                        },
-                        backgroundColour: kPrimaryBlue,
-                        height: 40.0.h,
-                        width: 107.0.w,
-                        child: const CustomText(
-                          text:  "Edit",
-                          colour: kWhite,
+                      if (readOnly)
+                        CustomElevatedButton(
+                          borderSideColour: kTransparent,
+                          onClick: () {
+                            setState(() {
+                              readOnly = !readOnly;
+                              enabled = !enabled;
+                            });
+                          },
+                          backgroundColour: kPrimaryBlue,
+                          height: 40.0.h,
+                          width: 107.0.w,
+                          child: const CustomText(
+                            text: "Edit",
+                            colour: kWhite,
+                          ),
                         ),
-                      ),
-                      if(!readOnly)
-                      CustomElevatedButton(
-                        onClick: () {
-                          setState(() {
-                            readOnly = !readOnly;
-                            enabled = !enabled;
-                          });
-                        },
-                        backgroundColour: kPrimaryBlue,
-                        height: 40.0.h,
-                        width: 107.0.w,
-                        child: const CustomText(
-                          text: "Save",
-                          colour: kWhite,
+                      if (!readOnly)
+                        CustomElevatedButton(
+                          borderSideColour: kTransparent,
+                          onClick: () {
+                            setState(() {
+                              readOnly = !readOnly;
+                              enabled = !enabled;
+                            });
+                          },
+                          backgroundColour: kPrimaryBlue,
+                          height: 40.0.h,
+                          width: 107.0.w,
+                          child: const CustomText(
+                            text: "Save",
+                            colour: kWhite,
+                          ),
                         ),
-                      ),
                       SizedBox(width: 39.5.w),
                     ],
                   ),
@@ -159,8 +160,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   }
 }
 
-
-
 Widget _buildProfileDetail(
   context,
   TextEditingController controller,
@@ -168,7 +167,7 @@ Widget _buildProfileDetail(
   TextInputAction inputAction,
   String title,
   bool readOnly,
-    bool enabled,
+  bool enabled,
 ) {
   return Padding(
     padding: EdgeInsets.only(left: 26.0.w),

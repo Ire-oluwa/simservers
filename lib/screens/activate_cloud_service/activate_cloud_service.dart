@@ -44,7 +44,7 @@ class _ActivateCloudServicesState extends State<ActivateCloudServices> {
       ),
       body: ListView(
         children: [
-          Divider(color: kBlack, thickness: 1.0.h, indent: 0.0, endIndent: 0.0),
+          // Divider(color: kBlack, thickness: 1.0.h, indent: 0.0, endIndent: 0.0),
           SizedBox(height: 18.75.h),
           _buildTabBar(context, _deviceNameController, _deviceKeyController,
               _simBalanceController, _devicePinController),
@@ -55,7 +55,7 @@ class _ActivateCloudServicesState extends State<ActivateCloudServices> {
             child: GestureDetector(
               onTap: () {
                 showDialog(
-                  barrierDismissible: false,
+                    barrierDismissible: false,
                     context: context,
                     builder: (context) {
                       return _buildBankDetailsDialog(context);
@@ -210,7 +210,7 @@ class _ActivateCloudServicesState extends State<ActivateCloudServices> {
             child: GestureDetector(
               onTap: () {
                 showDialog(
-                  barrierDismissible: false,
+                    barrierDismissible: false,
                     context: context,
                     builder: (context) {
                       return _buildBankDetailsDialog(context);
@@ -305,7 +305,10 @@ Widget _buildTabBar(BuildContext context, deviceNameController,
             showDialog(
               context: context,
               builder: (context) {
-                return Delete(onClick: () {}, title: "Are you sure you want to delete this device?",);
+                return Delete(
+                  onClick: () {},
+                  title: "Are you sure you want to delete this device?",
+                );
               },
             );
           },

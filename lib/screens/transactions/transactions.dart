@@ -33,12 +33,7 @@ class _TransactionsScreenState extends State<TransactionsScreen> {
           color: kContainerWhite,
           child: Column(
             children: [
-              Divider(
-                thickness: 1.0.h,
-                color: kBlack,
-                indent: 0.0,
-                endIndent: 0.0,
-              ),
+              // Divider(thickness: 1.0.h, color: kBlack, indent: 0.0, endIndent: 0.0),
               SizedBox(height: 26.75.h),
               Padding(
                 padding: EdgeInsets.only(right: 19.0.w),
@@ -109,7 +104,8 @@ class _TransactionsScreenState extends State<TransactionsScreen> {
                   itemCount: 100,
                   itemBuilder: (context, index) {
                     return Padding(
-                      padding: EdgeInsets.only(left: 19.0.w, right: 22.0.w, bottom: 1.5.h),
+                      padding: EdgeInsets.only(
+                          left: 19.0.w, right: 22.0.w, bottom: 1.5.h),
                       child: CustomContainer(
                         colour: kWhite,
                         boxShadowColour: kWhite,
@@ -124,14 +120,40 @@ class _TransactionsScreenState extends State<TransactionsScreen> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  CustomText(text: "Suleiman", fontSize: 10.94.sp, colour: const Color(0xFF323C47), fontWeight: FontWeight.bold,),
-                                  CustomText(text: "${DateTime.now().hour}:${DateTime.now().minute}", fontSize: 8.0.sp, colour: const Color(0xFF575757),),
+                                  CustomText(
+                                    text: "Suleiman",
+                                    fontSize: 10.94.sp,
+                                    colour: const Color(0xFF323C47),
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  CustomText(
+                                    text:
+                                        "${DateTime.now().hour}:${DateTime.now().minute}",
+                                    fontSize: 8.0.sp,
+                                    colour: const Color(0xFF575757),
+                                  ),
                                 ],
                               ),
-                              CustomText(text: "Sme Cloud", fontSize: 10.94.sp, colour: const Color(0xFF707683),),
-                              CustomText(text: "10 GB", fontSize: 10.94.sp, colour: const Color(0xFF707683),),
-                              CustomText(text: "08148349284", fontSize: 10.94.sp, colour: const Color(0xFF707683),),
-                              CustomText(text: "Successful", fontSize: 10.94.sp, colour: const Color(0xFF4CA835),),
+                              CustomText(
+                                text: "Sme Cloud",
+                                fontSize: 10.94.sp,
+                                colour: const Color(0xFF707683),
+                              ),
+                              CustomText(
+                                text: "10 GB",
+                                fontSize: 10.94.sp,
+                                colour: const Color(0xFF707683),
+                              ),
+                              CustomText(
+                                text: "08148349284",
+                                fontSize: 10.94.sp,
+                                colour: const Color(0xFF707683),
+                              ),
+                              CustomText(
+                                text: "Successful",
+                                fontSize: 10.94.sp,
+                                colour: const Color(0xFF4CA835),
+                              ),
                             ],
                           ),
                         ),

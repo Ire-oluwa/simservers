@@ -23,7 +23,7 @@ class _AddApiState extends State<AddApi> {
         onTap: kUnfocus,
         child: SingleChildScrollView(
           child: SizedBox(
-            height: 447.0.h,
+            height: 487.0.h,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -42,6 +42,12 @@ class _AddApiState extends State<AddApi> {
                   onKeyUp: (string) {},
                 ),
                 SizedBox(height: 13.0.h),
+                CustomText(
+                  text: "Device key",
+                  colour: kLabelTextColour,
+                  fontSize: 12.0.sp,
+                ),
+                SizedBox(height: 3.09.h),
                 //text with padding top:13, bottom: 3.09
                 CustomTextFormField(
                   controller: context.read<AddApiProvider>().deviceKey,
@@ -72,6 +78,8 @@ class _AddApiState extends State<AddApi> {
                   ),
                 ),
                 //text with padding top:13, bottom: 3.09
+                SizedBox(height: 13.09.h),
+                //text with padding top:13, bott
                 CustomText(
                   text: "Enter Pin",
                   colour: const Color(0xFF000000),
@@ -113,8 +121,8 @@ class _AddApiState extends State<AddApi> {
                       height: 24.0.h,
                       width: 113.0.w,
                       child: CustomText(
-                        text: "Save",
-                        colour: kBlack,
+                        text: "Done",
+                        colour: kWhite,
                         fontSize: 10.0.sp,
                       ),
                     ),

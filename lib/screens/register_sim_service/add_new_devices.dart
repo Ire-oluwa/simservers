@@ -197,11 +197,12 @@ class AddNewDeviceColumn extends StatelessWidget {
                   width: 102.32.w,
                   child: CustomElevatedButton(
                     borderRadius: 10.0.r,
+                    borderSideColour: kTransparent,
                     onClick: () {
-                      Provider.of<NewDeviceData>(context).addDevice(
-                        deviceNameController.text,
-                        deviceKeyController.text,
-                      );
+                      context.read<NewDeviceData>().addDevice(
+                            deviceNameController.text,
+                            deviceKeyController.text,
+                          );
                     },
                     backgroundColour: kPrimaryBlue,
                     height: 26.26.h,

@@ -49,6 +49,7 @@ class _SetTransactionPinState extends State<SetTransactionPin> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   CustomElevatedButton(
+                    borderSideColour: kTransparent,
                     borderRadius: 20.0.r,
                     onClick: () {},
                     backgroundColour: kButtonColour,

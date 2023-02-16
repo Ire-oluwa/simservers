@@ -5,7 +5,8 @@ import 'package:simservers/utilities/elevated_button_style.dart';
 import 'package:simservers/widgets/custom_text.dart';
 
 class Delete extends StatefulWidget {
-  const Delete({Key? key, required this.onClick, required this.title}) : super(key: key);
+  const Delete({Key? key, required this.onClick, required this.title})
+      : super(key: key);
   static const String id = "delete";
   final void Function() onClick;
   final String title;
@@ -59,7 +60,7 @@ class _DeleteState extends State<Delete> {
                     child: CustomText(
                       text: "Close",
                       fontSize: 7.49.sp,
-                      colour: kPrimaryBlue,
+                      colour: kBlack,
                     ),
                   ),
                 ],

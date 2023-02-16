@@ -38,12 +38,7 @@ class _ApiSettingsState extends State<ApiSettings> {
         child: SizedBox(
           child: Column(
             children: [
-              Divider(
-                indent: 0.0,
-                endIndent: 0.0,
-                thickness: 1.0.h,
-                color: kBlack,
-              ),
+              // Divider(indent: 0.0, endIndent: 0.0, thickness: 1.0.h, color: kBlack),
               SizedBox(height: 18.75.h),
               _buildApiSettingsButtons(
                 context,

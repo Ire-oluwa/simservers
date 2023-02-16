@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:simservers/models/new_device/new_device_data.dart';
 import 'package:simservers/providers/add_api_provider/add_api_provider.dart';
 import 'package:simservers/providers/choose_plan_provider/choose_plan_provider.dart';
 import 'package:simservers/providers/device_info_provider.dart';
@@ -49,6 +50,7 @@ void main() {
         ChangeNotifierProvider(create: (_) => TransactionProvider()),
         ChangeNotifierProvider(create: (_) => ChoosePlanProvider()),
         ChangeNotifierProvider(create: (_) => FAQProvider()),
+        ChangeNotifierProvider(create: (_) => NewDeviceData())
       ],
       child: const SimServers(),
     ),

@@ -45,8 +45,6 @@ class _ManageMembersState extends State<ManageMembers> {
         padding: EdgeInsets.only(left: 21.0.w, right: 20.0.w),
         child: Column(
           children: [
-            Divider(
-                color: kBlack, thickness: 1.0.h, indent: 0.0, endIndent: 0.0),
             SizedBox(height: 24.75.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

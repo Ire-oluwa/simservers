@@ -58,6 +58,7 @@ class _ChangePasswordInSettingsState extends State<ChangePasswordInSettings> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   CustomElevatedButton(
+                    borderSideColour: kTransparent,
                     borderRadius: 20.0.r,
                     onClick: () {},
                     backgroundColour: kButtonColour,
